@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="46D4C895-451F-4859-F997-3166980EBE8B" name="camera">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 07:50:07 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="crid" id="69F2F34E-55A6-A329-9301-47368172F416">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 07:51:35 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E9D0E335-B7F8-C827-0B6D-029250EF13B1" referredColumn="A22C1C90-6E93-56B3-1531-E7F524E4BC89"/>
+</associations>
+</Column>
+<Column name="cconnecturl" id="984D9770-E567-B557-B5B9-ECFF06629164">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 07:51:35 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B430A9F4-5C72-E9B9-EFCB-471E8566C557" name="camera_PK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-12-04 05:46:36 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="69F2F34E-55A6-A329-9301-47368172F416"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E9FE1F1E-714E-ECC3-E077-8BEDD27A1FCF" name="camera_room_FK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 07:55:08 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="69F2F34E-55A6-A329-9301-47368172F416"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

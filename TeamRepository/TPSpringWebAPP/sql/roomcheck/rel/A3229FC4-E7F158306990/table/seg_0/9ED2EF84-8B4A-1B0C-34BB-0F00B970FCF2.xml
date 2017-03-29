@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9ED2EF84-8B4A-1B0C-34BB-0F00B970FCF2" name="board_as">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-22 11:40:48 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bano" id="546F6402-7443-E771-9D11-FB5C2A0AB31D">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-22 11:42:42 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="batitle" id="8BDF6124-F333-E1F3-107F-FC06978A60D9">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-22 11:42:42 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bacontent" id="9E55DB06-C971-EC10-6EEA-B54BE02A8CF4">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-22 11:42:53 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bawriter" id="C567C21E-B941-DBC2-77A0-B4D53A0A38C2">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-22 11:44:30 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF832FB3-663A-E27C-3FF9-60C96BEA7ABB" referredColumn="6B0BCD38-5C7A-0698-DC3E-C7DD90D7CC42"/>
+</associations>
+</Column>
+<Column name="badate" id="7EBBF001-0A42-C3D6-CFFA-D59368CC0DCD">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-22 11:43:17 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BFFF9C5D-1D19-22D5-48AF-2A52117004C2" name="board_as_PK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-22 11:44:55 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="546F6402-7443-E771-9D11-FB5C2A0AB31D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05BB4F7F-71FB-C951-0B5C-FB36BD644776" name="board_as_member_FK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-22 11:45:13 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C567C21E-B941-DBC2-77A0-B4D53A0A38C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

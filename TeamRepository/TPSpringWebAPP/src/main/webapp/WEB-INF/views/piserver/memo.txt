@@ -1,0 +1,19 @@
+온도 습도
+화재
+가스
+초음파
+Cam
+
+
+sensor
+sensorDHT11
+
+Sen
+temperaturehumidity
+
+
+
+trid=201&ttemperature=17&thumidity=34
+
+
+<img src="http://192.168.0.24:50001/?action=stream" width="100" />

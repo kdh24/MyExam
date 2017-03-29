@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="89A0F66B-01F9-7E57-767F-C2782B923D05" name="temperature_Humidity">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:31:34 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tid" id="D62076EB-1F59-9832-5E9F-E9D988620A28">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:32:54 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="trid" id="C83E11A2-4E78-EDBF-DF10-ABCA46C65B38">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:40:21 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FB481BAD-48CA-FB61-5E72-86590B3D18A6" referredColumn="A22C1C90-6E93-56B3-1531-E7F524E4BC89"/>
+</associations>
+</Column>
+<Column name="tdate" id="ED0CEB65-C04E-4661-3114-9E322EDA18E7">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:40:21 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ttemperature" id="296C33CA-64DD-F3EB-9622-3340E8E68395">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:40:21 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>1</dataTypeScale>
+<ownDataTypeParameters>,4,1</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="thumidity" id="31D20244-54A9-37A8-7FFC-34211FB7FD75">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:48:42 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>1</dataTypeScale>
+<ownDataTypeParameters>,4,1</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E52F7EF3-8EE7-F6EC-EA44-2C0CE72C759C" name="temperature_Humidity_PKv2">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:00:27 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D62076EB-1F59-9832-5E9F-E9D988620A28"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2F2DBB0C-7F1C-DD76-1015-3610C1A292AE" name="temperature_Humidity_room_FK">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:24:39 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C83E11A2-4E78-EDBF-DF10-ABCA46C65B38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

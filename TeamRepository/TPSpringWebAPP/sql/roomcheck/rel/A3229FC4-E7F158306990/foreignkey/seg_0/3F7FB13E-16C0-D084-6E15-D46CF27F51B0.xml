@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3F7FB13E-16C0-D084-6E15-D46CF27F51B0" containerWithKeyObject="D626C617-35A4-AA9F-BFFC-348CC77925C2" localFKIndex="1769227A-5CAA-1189-6245-7B802ACED554" name="iotdevice_room_FK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 08:10:00 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6CBDE3D5-5BE1-52AB-5DDA-47BDDAFD2F75</referredTableID>
+<keyObject>2FEB9174-DAF9-087F-2321-D0B46A0FDF74</keyObject>
+<referredKeyID>2FEB9174-DAF9-087F-2321-D0B46A0FDF74</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

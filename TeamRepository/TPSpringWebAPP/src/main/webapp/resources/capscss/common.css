@@ -1,0 +1,171 @@
+
+/* CSS Document */
+
+/*--------------------------------------
+	
+	written by Byeon sang woo
+	
+	swbyeon@reseedcrop.com
+	
+--------------------------------------*/
+
+/* 내가 만든거 (start) */
+#logoutDiv div {
+    width: 176px;
+    font-size: 15px;
+    font-family: fantasy;
+    font-style: italic;
+    padding: 5px 0 5px 10px;
+    /* display: block; */
+    height: 35px;
+    padding-left: 20px;
+}
+		
+#logoutForm{
+	height: 100%;
+}
+/* 내가 만든거 (end)  */
+
+/* common */
+
+a:link, a:visited {text-decoration:none; color:inherit; }
+a:hover {color:inherit;}
+.ir {position:relative; z-index:-1; *visibility:hidden;}
+.irr {visibility:hidden;}
+hr.clear {visibility:hidden; display:block; clear:both;}
+input {font-size:12px; color:#636363; vertical-align:middle;}
+input[type=text] {height:20px; border:solid 1px #cbcbcb;}
+input[type=password] {height:20px; padding:1px; border:solid 1px #cbcbcb;}
+textarea {padding:4px; color:#636363; font:11px Dotum;}
+.skipnavigation {font-size:0; height:0; line-height:0; visibility:hidden;}
+legend {position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; padding:0; visibility:hidden; font-size:0; line-height:0;}
+.clear {*zoom:1;}
+.clear:after {content:""; display:block; clear:both;}
+html { overflow:hidden; }
+@font-face {
+	font-family:NANUM;
+	src:url('/myweb/resources/capsfont/NanumBarunGothic.eot');
+	src:local(※), url('/myweb/resources/capsfont/NanumBarunGothic.woff') format('woff');
+}
+
+body{
+	font-family:NANUM;
+}
+
+#container{
+	width:100%;
+	height:100%;
+	margin-left:15px;
+	left:0;
+	top:0;
+	
+	position:absolute;
+}
+
+.content_area{
+	min-width:1024px;
+	width:100%;
+	height:95%;
+	overflow-y:auto;
+	overflow-x:hidden;
+	position:absolute;
+	top:50px;
+	left:0;
+}
+
+.content_area2{
+			min-width:1024px;
+			width:100%;
+			height:auto;
+			overflow-y:auto;
+			overflow-x:hidden;
+			position:absolute;
+			top:50px;
+			left:0;
+		}
+
+.content_wrap{
+	width:66%;
+	float:left;
+	position:relative;
+}
+.content{
+	width:90%;
+	position:absolute;
+	left:50%;
+	margin-left:-45%;
+	margin-top:100px;
+}
+
+.content table{
+	width:100%;
+	border:1px red solid;
+}
+
+/* main */
+.main_slide_nav{
+	width:31px;
+	position:absolute;
+	right:375px;
+	top:93px;
+	z-index:100;
+}
+
+.main_slide_nav li{
+	width:100%;
+	display:block;
+	height:30px;
+	text-align:center;
+	padding-top:8px;
+	font-size:13px;
+	color:#3f72c3;
+	margin-bottom:5px;
+	background:url('/myweb/resources/capsimages/css/main_pager_off.png') no-repeat;
+}
+.main_slide_nav li.active{
+	background:url('/myweb/resources/capsimages/css/main_pager_on.png') no-repeat;
+}
+
+.section{
+	position:relative;
+	background-position:50% 45%;
+}
+
+.section img{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-top:-245px;
+	margin-left:-500px;
+}
+
+.main_section_move_btn{
+	position:fixed;
+	bottom:0;
+	left:50%;
+	width:82px;
+	height:29px;
+	margin-left:-220px;
+	z-index:99;
+}
+.move_down{
+	float:left;
+	background:url('/myweb/resources/capsimages/css/slide_down_off.jpg') top center no-repeat;
+	width:41px;
+	height:29px;
+	cursor:pointer;
+}
+.move_down:hover{
+	background:url('/myweb/resources/capsimages/css/slide_down_on.jpg') top center no-repeat;
+}
+
+.move_up{
+	float:left;
+	background:url('/myweb/resources/capsimages/css/slide_up_off.jpg') top center no-repeat;
+	width:41px;
+	height:29px;
+	cursor:pointer;
+}
+.move_up:hover{
+	background:url('/myweb/resources/capsimages/css/slide_up_on.jpg') top center no-repeat;
+}

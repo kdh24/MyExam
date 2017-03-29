@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="66BC06C1-CF88-3B51-5E39-B79173705B9D" name="visitor">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:48:06 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="vid" id="69D280CF-1570-6E85-FD6F-F28D8A49B0D8">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:48:06 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vrid" id="7211D5EF-E501-D87C-D480-E03ACD549FA2">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:48:06 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="935C0BD3-F893-2E91-7838-533F49EFAC15" referredColumn="A22C1C90-6E93-56B3-1531-E7F524E4BC89"/>
+</associations>
+</Column>
+<Column name="vdate" id="D0C82AB8-A58A-1DC1-EF90-4010F3283451">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:48:06 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vstate" id="15D89D0C-0D8A-6D38-EEDB-74171708439A">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-23 09:38:30 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="22534CD3-C510-9E83-4BB6-408C619BEB58" name="visitor_PKv2">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:53:43 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="69D280CF-1570-6E85-FD6F-F28D8A49B0D8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26990BD2-8F7A-7220-C21E-CB43D834BDC1" name="visitor_room_FK">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:25:07 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7211D5EF-E501-D87C-D480-E03ACD549FA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

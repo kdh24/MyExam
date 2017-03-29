@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1A282491-B3BE-5810-793C-B26D738A3437" name="member">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:25:01 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="mid" id="6B0BCD38-5C7A-0698-DC3E-C7DD90D7CC42">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:26:20 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mpassword" id="CB5943B7-16F3-6776-2E5F-441B2A061C4B">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:26:55 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mname" id="829D3181-7A44-0C1F-41F3-C8F9A0D4A60D">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:27:13 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="memail" id="F6FED9D5-101D-8B34-4066-D108ED04B390">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:29:32 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="maddress" id="05F8891A-C19F-8508-BD03-0C12C5AEB28A">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:29:44 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mtel" id="2B3798E3-1C81-F088-F647-3E7AF145D916">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:29:50 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13</dataTypeSize>
+<ownDataTypeParameters>13,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mlevel" id="1DC4AF57-4554-2936-5189-58BCFCF397B5">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:58:22 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13</dataTypeSize>
+<ownDataTypeParameters>13,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7B5C4309-64B0-3659-91B4-DF7D5FD6DCB8" name="member_PK">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:38:50 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6B0BCD38-5C7A-0698-DC3E-C7DD90D7CC42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D626C617-35A4-AA9F-BFFC-348CC77925C2" name="iotdevice">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 08:05:35 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="irid" id="BC096D26-34B4-F4EE-4FC3-149FC88064F9">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 08:07:16 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3F7FB13E-16C0-D084-6E15-D46CF27F51B0" referredColumn="A22C1C90-6E93-56B3-1531-E7F524E4BC89"/>
+</associations>
+</Column>
+<Column name="endofstream " id="ACDE71CD-0920-DE65-26CF-6B9409386104">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 08:08:18 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3B0A0C3B-AF3E-44AF-9C99-0D27658696C5" name="iotdevice_PK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 08:09:56 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC096D26-34B4-F4EE-4FC3-149FC88064F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1769227A-5CAA-1189-6245-7B802ACED554" name="iotdevice_room_FK">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-11-29 08:10:00 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC096D26-34B4-F4EE-4FC3-149FC88064F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

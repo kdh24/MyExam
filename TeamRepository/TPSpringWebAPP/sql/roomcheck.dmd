@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="roomcheck" id="292DFB3E-41F1-8A20-8EAE-6AA39F3CEC70" version="3.5">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:23:42 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>292DFB3E-41F1-8A20-8EAE-6AA39F3CEC70</designId>
+</OSDM_Design>

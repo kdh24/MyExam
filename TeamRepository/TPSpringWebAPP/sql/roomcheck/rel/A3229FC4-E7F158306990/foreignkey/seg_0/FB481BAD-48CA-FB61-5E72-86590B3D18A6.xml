@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FB481BAD-48CA-FB61-5E72-86590B3D18A6" containerWithKeyObject="89A0F66B-01F9-7E57-767F-C2782B923D05" localFKIndex="2F2DBB0C-7F1C-DD76-1015-3610C1A292AE" name="temperature_Humidity_room_FK">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:24:39 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>6CBDE3D5-5BE1-52AB-5DDA-47BDDAFD2F75</referredTableID>
+<keyObject>2FEB9174-DAF9-087F-2321-D0B46A0FDF74</keyObject>
+<referredKeyID>2FEB9174-DAF9-087F-2321-D0B46A0FDF74</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

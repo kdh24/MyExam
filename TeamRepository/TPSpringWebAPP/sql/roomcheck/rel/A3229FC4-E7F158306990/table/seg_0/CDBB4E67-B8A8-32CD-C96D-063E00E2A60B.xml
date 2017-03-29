@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CDBB4E67-B8A8-32CD-C96D-063E00E2A60B" name="board_notice">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:59:16 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<ordsAlias>table_22</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="bno" id="50F99464-E4DA-C218-EC4C-04FB8EE58D67">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 13:06:02 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="btitle" id="DA727BA7-B5A5-745D-CCEB-2F48E29BF20C">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 13:06:02 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bcontent" id="AFBD8D26-91BB-F454-1889-F43CE1BDED4F">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 13:06:02 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bwriter" id="B839E43D-7991-9A6F-1538-E05F5019C4CE">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 13:06:02 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="32FE8237-FCC7-1058-9DBA-D2BFD77E1326" referredColumn="6B0BCD38-5C7A-0698-DC3E-C7DD90D7CC42"/>
+</associations>
+</Column>
+<Column name="bdate" id="2000BEBB-D00E-0CAC-27E7-20BBEF488C53">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 13:06:02 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bhitcount" id="74C37022-CB3D-D5B4-27D7-FAB9D0712D3E">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 13:06:02 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2BFCD46B-A4BF-6737-C10A-0EC11A474185" name="board_notice_PK">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 13:06:02 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50F99464-E4DA-C218-EC4C-04FB8EE58D67"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C0A4546-0074-87D0-23F6-59F99AAACC64" name="board_notice_member_FK">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 13:06:08 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B839E43D-7991-9A6F-1538-E05F5019C4CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

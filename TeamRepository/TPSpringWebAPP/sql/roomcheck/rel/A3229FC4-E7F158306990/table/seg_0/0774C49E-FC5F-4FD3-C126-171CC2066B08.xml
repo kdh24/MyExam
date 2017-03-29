@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0774C49E-FC5F-4FD3-C126-171CC2066B08" name="contract">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:59:12 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<ordsAlias>table_16</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cid" id="4377E4FB-DB64-A340-F57F-1396B6ABCC57">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:59:45 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65336AFF-89B8-0A7A-B8D2-696DDE3D5FE8" referredColumn="6B0BCD38-5C7A-0698-DC3E-C7DD90D7CC42"/>
+</associations>
+</Column>
+<Column name="cfire" id="101E5922-AD1D-3B3E-E3E6-F9D5C4C5875D">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:01:42 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cgas" id="97A562FF-2E45-9E88-1EF3-5828CC970A41">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:01:42 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ctemperature" id="514576E8-F9D5-8A46-8F17-6A964BD7D4A7">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:01:42 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cvisitor" id="F10D9F88-C2CA-E8A9-8A77-5E0239F0C7A8">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:01:42 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cview" id="E9B6CCBE-2886-C9D8-C61E-C67E2F87D8EE">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:32:08 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="17DB6EC1-6F9C-0F29-1E76-24BE1095A233" name="contract_PK">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 11:59:45 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4377E4FB-DB64-A340-F57F-1396B6ABCC57"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="15360585-EF8A-835F-0E7A-CAC7734E74C3" name="contract_member_FK">
+<createdBy>kdh24</createdBy>
+<createdTime>2016-11-10 12:30:54 UTC</createdTime>
+<ownerDesignName>roomcheck</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4377E4FB-DB64-A340-F57F-1396B6ABCC57"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
