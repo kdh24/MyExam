@@ -21,7 +21,6 @@ public class DBTestClass3 {
 			int mat = 0;
 			String resultData="";
 			
-
 			stmt.execute("DELETE from newTable;");
 			
 			while(true){
