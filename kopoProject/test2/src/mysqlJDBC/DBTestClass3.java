@@ -55,7 +55,8 @@ public class DBTestClass3 {
 									System.out.println(resultData);
 				}
 				System.out.println();
-				
+
+				rset.close();
 			}
 
 			
@@ -127,8 +128,8 @@ public class DBTestClass3 {
 				// 결과물 처리
 				System.out.println(rset.getString(1));
 			}
-			rset.close();
-	*/		stmt.close();
+	*/		
+			stmt.close();
 			conn.close();
 			
 		} catch (Exception e) {
