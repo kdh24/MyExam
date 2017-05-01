@@ -28,7 +28,14 @@ public class Calc_Bonus_by_stmt_2 {
 			int count = 1;
 
 			// SELECT 문을 보내 값을 ResultSet 변수에 받아온다
-			ResultSet rs = stmt.executeQuery("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE ");
+//			ResultSet rs = stmt.executeQuery("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE ");
+			
+			int rowNum = 100000;
+			// SELECT 문을 보내 값을 ResultSet 변수에 받아온다
+			String queryText = String.format("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE "
+					+ "WHERE ROWNUM <= %s", rowNum);
+			
+			ResultSet rs = stmt.executeQuery(queryText);
 
 			// 시간 측정을 위한 StartTime 변수
 			startTime = System.currentTimeMillis();
