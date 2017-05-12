@@ -52,7 +52,8 @@ public class Calc_Bonus_by_stmt_7 {
 					+ " SQL_ERRM:= SQLERRM;" + "SQL_CODE:= SUBSTR(SQLCODE,1,200);"
 					+ "INSERT INTO ERROR_LOG_TBL(ERROR_TIME, PROGRAM_NAME, ERROR_CODE, ERROR_MESSAGE, ETC)"
 					+ " VALUES(SYSDATE, '프로그램 에러',SQL_CODE, SQL_ERRM, '비고');" + "END;";
-
+			
+			// 작업 처리를 위한 Statement 객체  생성
 			cstmt = conn.prepareCall(sqlStr);
 
 			// 시간 측정을 위한 StartTime 변수
