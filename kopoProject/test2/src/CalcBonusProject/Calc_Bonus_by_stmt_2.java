@@ -28,21 +28,19 @@ public class Calc_Bonus_by_stmt_2 {
 			int count = 1;
 
 			// SELECT 문을 보내 값을 ResultSet 변수에 받아온다
-//			ResultSet rs = stmt.executeQuery("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE ");
+			ResultSet rs = stmt.executeQuery("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE ");
 			
-			int rowNum = 100000;
-			// SELECT 문을 보내 값을 ResultSet 변수에 받아온다
-			String queryText = String.format("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE "
-					+ "WHERE ROWNUM <= %s", rowNum);
-			
-			ResultSet rs = stmt.executeQuery(queryText);
+//			int rowNum = 50000;
+//			// SELECT 문을 보내 값을 ResultSet 변수에 받아온다
+//			String queryText = String.format("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE "
+//					+ "WHERE ROWNUM <= %s", rowNum);
+//			
+//			ResultSet rs = stmt.executeQuery(queryText);
 
 			// 시간 측정을 위한 StartTime 변수
 			startTime = System.currentTimeMillis();
 			
 			//SELECT 문으로 가져온 row를 한줄씩 반복해서 처리해준다.
-			System.out.println(rs.getRow() + " 개 가져옴");
-			
 			while (rs.next()) {
 				// ResultSet 으로 가져온 2번째 값  JOB에 대한 값이 PRESIDENT 문자열이면 작업하지 않고 넘어간다
 				if (rs.getString(2).equals("PRESIDENT")) {
@@ -82,7 +80,7 @@ public class Calc_Bonus_by_stmt_2 {
 						rs.getString(4), BONUS);   
 
 				// 몇 행 작업을 처리중인지 보여주는 count 변수와 작업내용을 보여주는 sqlStr 출력
-				System.out.println(count + "row 처리 : " + sqlStr);
+//				System.out.println(count + "row 처리 : " + sqlStr);
 
 				// 매번 객체 생성하는 것을 하지 않는다
 //				stmt_ins = conn.createStatement();

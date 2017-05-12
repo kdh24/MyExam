@@ -73,7 +73,7 @@ public class Calc_Bonus_by_stmt_1 {
 						rs.getString(4), String.valueOf(BONUS));   
 
 				// 몇 행 작업을 처리중인지 보여주는 count 변수와 작업내용을 보여주는 sqlStr 출력
-				System.out.println(count + "row 처리 : " + sqlStr);
+//				System.out.println(count + "row 처리 : " + sqlStr);
 				
 				
 				stmt_ins = conn.createStatement();

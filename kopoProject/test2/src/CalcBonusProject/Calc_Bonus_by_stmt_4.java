@@ -30,6 +30,7 @@ public class Calc_Bonus_by_stmt_4 {
 			boolean debugStatus = false;
 			
 //////////////////////////////////////  디버깅 부분     /////////////////////////////////////////////////
+			/*
 
 			String rowNum = "5000";
 			// SELECT 문을 보내 값을 ResultSet 변수에 받아온다
@@ -105,9 +106,11 @@ public class Calc_Bonus_by_stmt_4 {
 			
 			// 디버그 작업이 성공했을 때 작업이 시작함
 			if(debugStatus){
+			*/
+				queryText = String.format("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE "
+						+ "WHERE JOB NOT LIKE '%s'", "PRESIDENT");
 			
-				rs = stmt.executeQuery("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE "
-						+ "WHERE JOB NOT LIKE 'PRESIDENT'");
+				ResultSet rs = stmt.executeQuery(queryText);
 				
 	
 				// 시간 측정을 위한 StartTime 변수
@@ -158,19 +161,21 @@ public class Calc_Bonus_by_stmt_4 {
 					// 매번 객체 생성하는 것을 하지 않는다
 	//				stmt_ins = conn.createStatement();
 					stmt_ins.executeUpdate(sqlStr);
-					stmt_ins.execute("COMMIT");
+//					commit 처리를 모든 작업이 끝나고 한번 수행하는 것으로 바꿔준다
+//					stmt_ins.execute("COMMIT");
 	//				stmt_ins.close();
 	
 					count++;
 				}
 	//			 System.out.println(resultData);
-				 
+
+				stmt_ins.execute("COMMIT");
 				// 시간 측정을 위한 endTime 변수
 				endTime = System.currentTimeMillis();
 	
 				// 총 작업 시간 출력
 				System.out.println("경과 시간 : " + (endTime - startTime) + "ms");
-			}
+//			}
 			
 			
 			// 작업이 끝난 후에 객체를 전부 종료해 준다

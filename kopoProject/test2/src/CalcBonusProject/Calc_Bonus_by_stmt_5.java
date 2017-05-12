@@ -2,10 +2,11 @@ package CalcBonusProject;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Calc_Bonus_by_stmt_3 {
+public class Calc_Bonus_by_stmt_5 {
 	public static void main(String[] args) {
 		try {
 			// 오라클 DB에 연결
@@ -18,6 +19,7 @@ public class Calc_Bonus_by_stmt_3 {
 			// 작업 처리를 위한 Statement 객체 생성
 			Statement stmt = conn.createStatement();
 			Statement stmt_ins = conn.createStatement();
+			PreparedStatement psmt = null;
 
 			// 작업 처리를 위한 각종 변수 생성
 			String resultData = "";
@@ -30,9 +32,9 @@ public class Calc_Bonus_by_stmt_3 {
 			boolean debugStatus = false;
 			
 //////////////////////////////////////  디버깅 부분     /////////////////////////////////////////////////
-/*
-//			테스트 할 라인 수
-			int rowNum = 50000;
+			/*
+
+			String rowNum = "5000";
 			// SELECT 문을 보내 값을 ResultSet 변수에 받아온다
 			queryText = String.format("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE "
 					+ "WHERE JOB NOT LIKE '%s' AND ROWNUM <= %s", "PRESIDENT", rowNum);
@@ -67,10 +69,9 @@ public class Calc_Bonus_by_stmt_3 {
 						rs.getString(4), BONUS);   
 
 				// 몇 행 작업을 처리중인지 보여주는 count 변수와 작업내용을 보여주는 sqlStr 출력
-				System.out.println("D " +count + "row 처리 : " + sqlStr);
+				System.out.println("디버깅 " +count + "row 처리 : " + sqlStr);
 				
 				stmt_ins.executeUpdate(sqlStr);
-				stmt_ins.execute("COMMIT");
 
 				count++;
 			}
@@ -79,21 +80,18 @@ public class Calc_Bonus_by_stmt_3 {
 			endTime = System.currentTimeMillis();
 
 			// 디버깅 총 작업 시간 출력
-			System.out.println("D 경과 시간 : " + (endTime - startTime) + "ms");
-
-//			테스트 한 라인이 제대로 다 들어갔는지 조회하는 부분
-			rs = stmt.executeQuery("SELECT COUNT(*) FROM BONUS_LARGE");
+			System.out.println("디버깅 경과 시간 : " + (endTime - startTime) + "ms");
 			
+			rs = stmt.executeQuery("SELECT COUNT(*) FROM BONUS_LARGE");
+
 			if(rs.next()){
 				String data = rs.getString(1);
-				System.out.println(data);
-//				테스트한 라인 수 만큼 조회가 된다면 성공한 것으로 판단하고 아니면 문제가 있는 것으로 판단한다
-				if(data.equals(String.valueOf(rowNum)) || data.equals(String.valueOf(rowNum-1))){
+				
+				if(data.equals(rowNum) || data.equals(rowNum)){
 					debugStatus = true;
 					System.out.println("디버그 작업을 성공했습니다.");
 					System.out.println("롤백합니다.");
 					stmt_ins.execute("ROLLBACK");
-					return;
 				}else{
 					debugStatus = false;
 					System.out.println("디버그 작업 중 문제가 발생했습니다.");
@@ -103,28 +101,31 @@ public class Calc_Bonus_by_stmt_3 {
 				}
 			}
 			
-*/
+
 
 //////////////////////////////////////    디버깅 종료      /////////////////////////////////////////////////
 
 			
 			// 디버그 작업이 성공했을 때 작업이 시작함
-//			if(debugStatus){
-//				rs = stmt.executeQuery("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE "
-//						+ "WHERE JOB NOT LIKE 'PRESIDENT'");
+			if(debugStatus){
+			*/
+
+				// SELECT 문을 보내 값을 ResultSet 변수에 받아온다
 				queryText = String.format("SELECT EMPNO, JOB, DEPTNO, SAL FROM EMP_LARGE "
 						+ "WHERE JOB NOT LIKE '%s'", "PRESIDENT");
+				
+				sqlStr = "INSERT INTO BONUS_LARGE(YYYYMM,EMPNO,JOB,DEPTNO,SAL,BONUS) "
+						+ "VALUES(to_char(sysdate,'yyyymm'), ?, ?, ?, ?, ?)";   
+				
 			
 				ResultSet rs = stmt.executeQuery(queryText);
-				
+				psmt = conn.prepareStatement(sqlStr);
 	
+				
 				// 시간 측정을 위한 StartTime 변수
 				startTime = System.currentTimeMillis();
 				
 				//SELECT 문으로 가져온 row를 한줄씩 반복해서 처리해준다.
-				System.out.println(rs.getRow() + " 개 가져옴");
-				
-	
 				while (rs.next()) {
 					// ResultSet 으로 가져온 2번째 값  JOB에 대한 값이 PRESIDENT 문자열이면 작업하지 않고 넘어간다
 	//				if (rs.getString(2).equals("PRESIDENT")) {
@@ -156,26 +157,34 @@ public class Calc_Bonus_by_stmt_3 {
 					// ResultSet 값 각각의 값을 보기위한 중간 출력 변수
 	//				resultData += rs.getString(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3) + "\t" + rs.getString(4)
 	//						+ "\t" + "\n";
+
+					// BONUS_LARGE 테이블에 값을 저장하기 위한 Insert문 설정
+					psmt.setString(1, rs.getString(1));
+					psmt.setString(2, rs.getString(2));
+					psmt.setString(3, rs.getString(3));
+					psmt.setString(4, rs.getString(4));
+					psmt.setInt(5, BONUS);
 					
-					// BONUS_LARGE 테이블에 값을 저장하기 위한 Insert문  
-					sqlStr = String.format("INSERT INTO BONUS_LARGE(YYYYMM,EMPNO,JOB,DEPTNO,SAL,BONUS) "
-							+ "VALUES(%s, '%s', '%s', '%s', '%s', '%s')", 
-							"to_char(sysdate,'yyyymm')", rs.getString(1), rs.getString(2), rs.getString(3),
-							rs.getString(4), BONUS);   
-	
+					
 					// 몇 행 작업을 처리중인지 보여주는 count 변수와 작업내용을 보여주는 sqlStr 출력
-					System.out.println(count + "row 처리 : " + sqlStr);
+					System.out.println(count + "row 처리 ");
 	
 					// 매번 객체 생성하는 것을 하지 않는다
 	//				stmt_ins = conn.createStatement();
-					stmt_ins.executeUpdate(sqlStr);
-					stmt_ins.execute("COMMIT");
+//					stmt_ins.executeUpdate(sqlStr);
+//					commit 처리를 모든 작업이 끝나고 한번 수행하는 것으로 바꿔준다
+//					stmt_ins.execute("COMMIT");
 	//				stmt_ins.close();
+					
+					psmt.executeUpdate();
+					psmt.clearParameters();
 	
 					count++;
 				}
 	//			 System.out.println(resultData);
-				 
+
+				psmt.execute("COMMIT");
+				psmt.close();
 				// 시간 측정을 위한 endTime 변수
 				endTime = System.currentTimeMillis();
 	
@@ -186,7 +195,7 @@ public class Calc_Bonus_by_stmt_3 {
 			
 			// 작업이 끝난 후에 객체를 전부 종료해 준다
 			rs.close();
-			stmt_ins.close();
+//			stmt_ins.close();
 			stmt.close();
 			conn.close();
 		} catch (Exception e) {
