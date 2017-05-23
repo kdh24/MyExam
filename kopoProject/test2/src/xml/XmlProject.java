@@ -64,7 +64,7 @@ public class XmlProject {
 
 			// Document 저장
 			DOMSource xmlDOM = new DOMSource(document);
-			StreamResult xmlFile = new StreamResult(new File("c:\\xml\\saved3.xml"));
+			StreamResult xmlFile = new StreamResult(new File("c:\\xml\\dongCount.xml"));
 			TransformerFactory.newInstance().newTransformer().transform(xmlDOM, xmlFile);
 			
 			// 작업이 끝난 후에 객체를 전부 종료해 준다
