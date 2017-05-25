@@ -20,7 +20,7 @@ public class star {
 			// 계속 반복하게 해주는 while 반복문			
 			while(true){
 				// * 출력
-				System.out.println("*");
+				System.out.printf("*");
 				
 				// 변수 k07_iA의 값과 k07_iB의 값이 같으면 2번째 반복문을 빠져나간다
 				if(k07_iA==k07_iB) break;
@@ -29,7 +29,7 @@ public class star {
 				k07_iB++;
 			}
 			// 엔터 처리
-			System.out.println("\n");
+			System.out.printf("\n");
 
 			// 변수 k07_iA의 값을 하나씩 증가
 			k07_iA++;
