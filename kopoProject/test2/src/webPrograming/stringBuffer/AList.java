@@ -47,22 +47,6 @@ public class AList {
 			System.out.printf(" ArrayList %d = %s\n", i, iAL.get(i));
 	
 	
-		int iTestMAX=1000000;
-		ArrayList iAL1 = new ArrayList();
-		
-		for(int i=0; i<iTestMAX; i++)
-			iAL1.add((int)(Math.random()*1000000));
-		
-		for(int i=0; i<iAL1.size(); i++)
-			System.out.printf(" ArrayList %d = %d\n", i, iAL1.get(i));
-	
-		System.out.printf("*********************************************\n");
-		iAL1.sort(null);
-		
-		for(int i=0; i<iAL1.size(); i++)
-			System.out.printf(" ArrayList %d = %d\n", i, iAL1.get(i));
-	
-	
 	
 	}
 }
