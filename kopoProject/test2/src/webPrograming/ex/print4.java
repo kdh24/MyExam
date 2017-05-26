@@ -13,13 +13,12 @@ public class print4 {
 		Calendar k07_cal = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY/MM/dd HH:mm");
 		
-		
 		String [] OneRec= {
 				"01   초코파이       4,000         2       8,000",
 				"02   바나나우유     1,000         4       4,000",
 				"03   건포도         3,300         1       3,300",
 				"04   오렌지주스     2,500         3       7,500",
-				"05   초코에몽         800         5       4,000",
+				"05   초코에몽         800         5       4,100",
 				"06   칠성사이다     1,700         3       5,100",
 				"07   우유속모카     1,500         6       9,000",
 				"08   맥스봉         1,000         2       2,000",
@@ -35,7 +34,7 @@ public class print4 {
 				"18   오뚜기케찹     2,800         4      11,200",
 				"19   오뚜기진라면   1,400         1       1,400",
 				"20   두부200g       1,500         1       1,500",
-				"21   콘푸로스트     4,000         3      12,000",
+				"21   콘푸로스트     4,000         3      12,200",
 				"22   맥심카누       2,200         5      11,000",
 				"23   참이슬         1,600         6       9,600",
 				"24   오비맥주       2,500         2       5,000",
@@ -51,52 +50,32 @@ public class print4 {
 		int price=0;
 		int num=0;
 
-//		data[0] = OneRec[0].substring(0, 2);	// 상품번호
-//		data[1] = OneRec[27].substring(3, 20).trim();	// 상품명
-//		data[2] = OneRec[27].substring(20, 27).trim();	// 상품가격
-//		data[3] = OneRec[27].substring(28, 30).trim();	// 구매수량
-		
-//		for(int i=0; i<OneRec.length; i++){
-//			if(i%5 ==0)
-//				System.out.println();
-//			System.out.printf("%s ", String.valueOf(OneRec[i].getBytes(0, 4)));
-//		}
-		
-//		price = Integer.parseInt((new String(OneRec[i].getBytes(),18,9)).replaceAll(",", "").trim());
-//		System.out.println(price);
-//		}
 		// 토탈 바이트 47
 		String pId = new String(OneRec[0].getBytes(),0,4);	// 상품명
 		String pName = new String(OneRec[0].getBytes(),5,15);	// 상품명
 		int pPrice = Integer.parseInt(new String(OneRec[0].getBytes(),20,10).trim().replaceAll(",", ""));	// 상품가격
 		int pNum = Integer.parseInt(new String(OneRec[0].getBytes(),30,10).trim().replaceAll(",", ""));	// 구매수량
 		int pTotal = Integer.parseInt(new String(OneRec[0].getBytes(),40,7).trim().replaceAll(",", ""));	// 총액
-		
-		System.out.println(pId);
-		System.out.println(pName);
-		System.out.println(pPrice);
-		System.out.println(pNum);
-		System.out.println(pTotal);
-		
 
 		for(int i=0; i<OneRec.length; i++){
+			// 토탈 바이트 47
+			pId = new String(OneRec[i].getBytes(),0,4);	// 상품명
+			pName = new String(OneRec[i].getBytes(),5,15);	// 상품명
+			pPrice = Integer.parseInt(new String(OneRec[i].getBytes(),20,10).trim().replaceAll(",", ""));	// 상품가격
+			pNum = Integer.parseInt(new String(OneRec[i].getBytes(),30,10).trim().replaceAll(",", ""));	// 구매수량
+			pTotal = Integer.parseInt(new String(OneRec[i].getBytes(),40,7).trim().replaceAll(",", ""));	// 총액
 			
+			if(pPrice * pNum != pTotal){
+				System.out.printf("****************************************************\n");
+				System.out.printf("오류[%s]\n",OneRec[i].toString());
+				// 마지막 계산값이 잘못되었으므로 제대로 된 계산값을 구해 해당 위치만 바꿔서 다시 넣어준다.
+				OneRec[i]= OneRec[i].toString().replaceAll(new String(OneRec[i].getBytes(),40,7).trim(), df.format(pPrice*pNum));
+				
+//				System.out.printf("수정[%s]\n",OneRec[i].toString().replaceAll(new String(OneRec[i].getBytes(),40,7).trim(), df.format(pPrice*pNum)));
+				System.out.printf("수정[%s]\n",OneRec[i].toString());
+				System.out.printf("****************************************************\n");
+			}
 		}
-
-		
-//		System.out.println(OneRec[0].getBytes().length);
-//		System.out.println(OneRec[3].length());
-//		data[4] = OneRec[3].substring(OneRec[0].length()-5, OneRec[0].length()).trim();	// 구매 합계
-//		System.out.println(data[4]);
-//		
-//		arrayPrice = OneRec[27].substring(20, 27).trim().split(",");
-//		String price2 = arrayPrice[0] + arrayPrice[1];
-//		
-////		System.out.println(OneRec.length);
-//		
-		
-		
-		
 	}
 }
 

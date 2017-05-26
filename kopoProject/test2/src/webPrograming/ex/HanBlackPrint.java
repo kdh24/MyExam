@@ -2,6 +2,7 @@ package webPrograming.ex;
 
 public class HanBlackPrint {
 	
+	int nomal = 4;
 
 	public static String HanBlackForeword(String Han, int num){
 		

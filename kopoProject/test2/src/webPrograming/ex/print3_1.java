@@ -43,8 +43,9 @@ public class print3_1 {
 		String product2 = "드링킹요구르트";
 		String productCode2 = "8801155822828";
 		
-		int beforeTax;
-		int tax;
+		int beforeTax =0;
+		int beforeTaxSum = 0;
+		int tax = 0;
 		int freeSum=0;
 		int taxSum=0;
 		int sum=0;
@@ -59,74 +60,29 @@ public class print3_1 {
 		System.out.printf("%10.10s %10.10s %8.8s %8.8s\n", "상  품  명", "단  가", "수  량", "금  액");
 		System.out.printf("------------------------------------------------\n");
 
-		
-		int base = itemName[0].getBytes().length/2;
-		int number=0;
-		int hSum=0;
-		
-//		for(int i=0 ;i<itemName.length; i++){
-//			System.out.println(itemName[i].getBytes().length)/2;
-//		}
-//		System.out.println(itemName.length);
-		
 		for(int i=0; i<itemName.length; i++){
-//			if(itemName[i].getBytes().length > 0 ){
-//				for(int j=0; j<itemName[j].length(); j++){
-//					System.out.println(itemName[i].substring(j, j+1).getBytes().length);
-//					if(itemName[i].substring(j, j+1).getBytes().length > 1){
-//						hSum++;
-//					}
-//				}
-				number = h_Black.HanCount(itemName[i])/2;
-				
-//			number = base - itemName[i].getBytes().length;
-//			h_Black
-//			System.out.printf("%-5.5s%-10.10s%6.6s%10.10s%12.12s\n", i+1 < 10 ? "0"+String.valueOf(i+1) : i+1, itemName[i], df.format(price[i]), df.format(num[i]), df.format(price[i]*num[i]));
-			
-//			if(itemName[i].getBytes().length/2 >=  base){
-//				System.out.println("------");
 			System.out.printf("%-5.5s%-" + String.valueOf(14-h_Black.HanCount(itemName[i])) +"."+String.valueOf(14-h_Black.HanCount(itemName[i]))+"s" +
-					 "%6.6s%10.10s%12.12s\n", i+1 < 10 ? "0"+String.valueOf(i+1) : i+1, itemName[i], df.format(price[i]), df.format(num[i]), df.format(price[i]*num[i]));
-//			}else{
-//				System.out.printf("%-5.5s%-" + String.valueOf(25+number) +"."+String.valueOf(25+number)+"s" +
-//						"%6.6s%10.10s%12.12s\n", i+1 < 10 ? "0"+String.valueOf(i+1) : i+1, itemName[i], df.format(price[i]), df.format(num[i]), df.format(price[i]*num[i]));
-//			}
-//				
-//					i + 1 < 10 ? "0" + String.valueOf(i + 1) : i + 1, itemName[i], df.format(price[i]), df.format(num[i]), df.format(price[i]*num[i]));
-//			System.out.printf("%s \t",String.valueOf(itemName[i].getBytes().length));
-//			if(itemName[i].getBytes().length > 0 ){
-//				System.out.printf("%-5.5s%-" + String.valueOf(14-itemName[i].length()) +"."+String.valueOf(14-itemName[i].length())+"s" +
-//			 "%6.6s%10.10s%12.12s\n", i+1 < 10 ? "0"+String.valueOf(i+1) : i+1, itemName[i], df.format(price[i]), df.format(num[i]), df.format(price[i]*num[i]));
-//			} else {
-//				System.out.printf("%-5.5s%-20.20s" + "%6.6s%10.10s%12.12s\n",
-//						i + 1 < 10 ? "0" + String.valueOf(i + 1) : i + 1, itemName[i], df.format(price[i]), df.format(num[i]), df.format(price[i]*num[i]));
-//			}
-			
-			hSum=0;
-			number=0;
-			
-			if(taxfree[i]){
-				freeSum += price[i] * num[i];
-			}else
-				taxSum += price[i] * num[i];
-			
-		}
-		beforeTax = (int)(taxSum/1.1);
-//		if(beforeTax % 10 != 0) beforeTax = (beforeTax+5)/10 *10;
-		tax = (int)(beforeTax/10.0);
-		if(tax % 10 != 0){
-			tax = (tax+5)/10 * 10;
-			beforeTax = taxSum - tax;
-		}
+					 "%6.6s%10.10s%12.12s\n", i+1 < 10 ? "0"+String.valueOf(i+1) : i+1 + ((taxfree[i] == false) ? "*" : ""), itemName[i], df.format(price[i]), df.format(num[i]), df.format(price[i]*num[i]));
 
+			if (taxfree[i] == false) {
+				beforeTax = ((int)(price[i] / 1.1 % 10)) != 0 ? (int)(price[i] / 1.1+5) /10 * 10 : (int)(price[i] / 1.1);
+				tax = (int) ((price[i]-beforeTax)*num[i]);
+				taxSum += tax;
+				beforeTaxSum+= beforeTax*num[i];
+			}else
+				freeSum += price[i]*num[i];
+			
+			sum+= price[i]*num[i];
+			
+		}
 		System.out.printf("%20.20s %22.22s\n", "(*)면 세  물 품", df.format(freeSum));
-		System.out.printf("%20.20s %22.22s\n", "과 세  물 품", df.format(taxSum));
-		System.out.printf("%21.21s %22.22s\n", "부   가   세", df.format(tax));
-		System.out.printf("%22.22s %22.22s\n", "합        계", df.format(tax+taxSum+freeSum));
-		System.out.printf("%-18.18s%23.23s\n", "결 제 대 상 금 액", df.format(tax+taxSum+freeSum));
+		System.out.printf("%20.20s %22.22s\n", "과 세  물 품", df.format(beforeTaxSum));
+		System.out.printf("%21.21s %22.22s\n", "부   가   세", df.format(taxSum));
+		System.out.printf("%22.22s %22.22s\n", "합        계", df.format(beforeTaxSum+taxSum+freeSum));
+		System.out.printf("%-18.18s%23.23s\n", "결 제 대 상 금 액", df.format(sum));
 		System.out.printf("------------------------------------------------\n");
 		System.out.printf("%-20.20s%25.25s\n", "0024 하 나", "5417**8890/07850246");
-		System.out.printf("%-15.15s%25.25s\n", "카드결제", "일시불 / "+ df.format(tax+taxSum+freeSum));
+		System.out.printf("%-15.15s%25.25s\n", "카드결제", "일시불 / "+ df.format(sum));
 		System.out.printf("------------------------------------------------\n");
 	}
 }
