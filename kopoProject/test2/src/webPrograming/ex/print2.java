@@ -5,62 +5,60 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class print2 {
-
 	public static void main(String[] args) {
-
-		DecimalFormat df = new DecimalFormat("###,###,###,###,###");
+		DecimalFormat k07_df = new DecimalFormat("###,###,###,###,###");
 		
 		Calendar k07_cal = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("YYYY/MM/dd");
+		SimpleDateFormat k07_sdf = new SimpleDateFormat("YYYY/MM/dd");
 		
-		String product1 = "í’€ë¬´ì›ìƒ˜ë¬¼";
-		String productCode1 = "8809169718205";
-		String product2 = "ë“œë§í‚¹ìš”êµ¬ë¥´íŠ¸";
-		String productCode2 = "8801155822828";
+		String k07_product1 = "Ç®¹«¿ø»ù¹°";
+		String k07_productCode1 = "8809169718205";
+		String k07_product2 = "µå¸µÅ·¿ä±¸¸£Æ®";
+		String k07_productCode2 = "8801155822828";
 		
-		int p_price1=600;
-		int p_price2=1600;
-		int p_num1=1;
-		int p_num2=1;
-		int sum = p_price1*p_num1+p_price2*p_num2;
+		int k07_p_price1=600;
+		int k07_p_price2=1600;
+		int k07_p_num1=1;
+		int k07_p_num2=1;
+		int k07_sum = k07_p_price1*k07_p_num1+k07_p_price2*k07_p_num2;
 		
-		int beforeTax = (int)(sum/1.1);
+		int k07_beforeTax = (int)(k07_sum/1.1);
 //		if(beforeTax % 10 != 0) beforeTax = (beforeTax+5)/10 *10;
-		int tax = (int)(beforeTax/10.0);
-		if(tax % 10 != 0){
-			tax = (tax+5)/10 * 10;
-			beforeTax = sum - tax;
+		int k07_tax = (int)(k07_beforeTax/10.0);
+		if(k07_tax % 10 != 0){
+			k07_tax = (k07_tax+5)/10 * 10;
+			k07_beforeTax = k07_sum - k07_tax;
 		}
 		
-		System.out.printf("%-100.100s\n", "ì¶©ì£¼(ì–‘í‰)íœ´ê²Œì†Œ");
-		System.out.printf("%-100.100s\n", "ì¶©ë¶ì¶©ì£¼ì‹œê°€ê¸ˆë©´ìš©ì „ë¦¬380-4");
-		System.out.printf("%-100.100s\n", "ìµœë³‘ê¶Œ 677-85-00239  TEL:043-857-9229");
-		System.out.printf("\n\n%-25.25s %-15.15s\n", "[ì •ìƒë“±ë¡]20160504 190049", "POSë²ˆí˜¸: 0002");
+		System.out.printf("%-100.100s\n", "ÃæÁÖ(¾çÆò)ÈŞ°Ô¼Ò");
+		System.out.printf("%-100.100s\n", "ÃæºÏÃæÁÖ½Ã°¡±İ¸é¿ëÀü¸®380-4");
+		System.out.printf("%-100.100s\n", "ÃÖº´±Ç 677-85-00239  TEL:043-857-9229");
+		System.out.printf("\n\n%-25.25s %-15.15s\n", "[Á¤»óµî·Ï]20160504 190049", "POS¹øÈ£: 0002");
 		System.out.printf("-------------------------------------------------\n");
-		System.out.printf("%-25.25s %-4.4s%-4.4s %4.4s\n", "í’ˆëª©ì½”ë“œ", "ë‹¨ê°€","ìˆ˜ëŸ‰","ê¸ˆì•¡");
+		System.out.printf("%-25.25s %-4.4s%-4.4s %4.4s\n", "Ç°¸ñÄÚµå", "´Ü°¡","¼ö·®","±İ¾×");
 		System.out.printf("-------------------------------------------------\n");
-		System.out.printf("%-100.100s\n", product1+product1);
-		System.out.printf("%-30.30s%4.4s%5.5s%10.10s\n", productCode1, df.format(p_price1), df.format(p_num1), df.format(p_price1*p_num1));
-		System.out.printf("%-100.100s\n", product2+product2);
-		System.out.printf("%-28.28s%6.6s%5.5s%10.10s\n", productCode2, df.format(p_price2), df.format(p_num2), df.format(p_price2*p_num2));
+		System.out.printf("%-100.100s\n", k07_product1+k07_product1);
+		System.out.printf("%-30.30s%4.4s%5.5s%10.10s\n", k07_productCode1, k07_df.format(k07_p_price1), k07_df.format(k07_p_num1), k07_df.format(k07_p_price1*k07_p_num1));
+		System.out.printf("%-100.100s\n", k07_product2+k07_product2);
+		System.out.printf("%-28.28s%6.6s%5.5s%10.10s\n", k07_productCode2, k07_df.format(k07_p_price2), k07_df.format(k07_p_num2), k07_df.format(k07_p_price2*k07_p_num2));
 		
-		System.out.printf("%-10.10s%33.33s\n", "ê³¼ì„¸  ë¬¼í’ˆ  í•©ê³„", df.format(beforeTax));
-		System.out.printf("%-13.13s%33.33s\n", "ë¶€     ê°€     ì„¸", df.format(tax));
-		System.out.printf("%-14.14s%33.33s\n", "í•©            ê³„", df.format(sum));
-		System.out.printf("%-18.18s %25.25s\n", "026-ë¹„ì”¨ì¹´ë“œì‚¬ ", "00/00A");
-		System.out.printf("%-14.14s%31.31s\n", "ì¹´  ë“œ  ë²ˆ  í˜¸  :", "5522-20**-****-BADD");
-		System.out.printf("%-13.13s%32.32s\n", "ì¹´  ë“œ  ë§¤  ì¶œ  :", df.format(sum));
-		System.out.printf("%-15.15s%27.27s\n", "ê±°  ë˜  êµ¬  ë¶„  :", "ì¼ì‹œë¶ˆ");
-		System.out.printf("%-24.24s  %19.19s\n", "ìŠ¹  ì¸  ë²ˆ  í˜¸  : 04-KICC", "75549250");
-		System.out.printf("%-24.24s\n", "ê°€ ë§¹ ì  ë²ˆ í˜¸  : ");
-		System.out.printf("%-15.15s%30.30s\n", "ë°›  ì€  ê¸ˆ  ì•¡  : ", df.format(sum));
-		System.out.printf("%-15.15s%31.31s\n", "ê±°    ìŠ¤    ë¦„  : ", df.format(0));
+		System.out.printf("%-10.10s%33.33s\n", "°ú¼¼  ¹°Ç°  ÇÕ°è", k07_df.format(k07_beforeTax));
+		System.out.printf("%-13.13s%33.33s\n", "ºÎ     °¡     ¼¼", k07_df.format(k07_tax));
+		System.out.printf("%-14.14s%33.33s\n", "ÇÕ            °è", k07_df.format(k07_sum));
+		System.out.printf("%-18.18s %25.25s\n", "026-ºñ¾¾Ä«µå»ç ", "00/00A");
+		System.out.printf("%-14.14s%31.31s\n", "Ä«  µå  ¹ø  È£  :", "5522-20**-****-BADD");
+		System.out.printf("%-13.13s%32.32s\n", "Ä«  µå  ¸Å  Ãâ  :", k07_df.format(k07_sum));
+		System.out.printf("%-15.15s%27.27s\n", "°Å  ·¡  ±¸  ºĞ  :", "ÀÏ½ÃºÒ");
+		System.out.printf("%-24.24s  %19.19s\n", "½Â  ÀÎ  ¹ø  È£  : 04-KICC", "75549250");
+		System.out.printf("%-24.24s\n", "°¡ ¸Í Á¡ ¹ø È£  : ");
+		System.out.printf("%-15.15s%30.30s\n", "¹Ş  Àº  ±İ  ¾×  : ", k07_df.format(k07_sum));
+		System.out.printf("%-15.15s%31.31s\n", "°Å    ½º    ¸§  : ", k07_df.format(0));
 		System.out.printf("-------------------------------------------------\n");
-		System.out.printf("%-10.10s %-10.10s\n", "ì£¼ë¬¸ë²ˆí˜¸ : ", "0920");
+		System.out.printf("%-10.10s %-10.10s\n", "ÁÖ¹®¹øÈ£ : ", "0920");
 		System.out.printf("-------------------------------------------------\n");
-		System.out.printf("%-5.5s %-5.5s %-5.5s\n", "íŒë§¤ì› : ", "000002", "í¸ì˜ì 2");
-		System.out.printf("%-10.10s-%-10.10s\n", sdf.format(k07_cal.getTime()), "0002-0922");
-		System.out.printf("%-6.6s[%-20.20s]\n", "ì—°ë™ëª¨ë“ˆ : ", "00138705   20160504190049");
+		System.out.printf("%-5.5s %-5.5s %-5.5s\n", "ÆÇ¸Å¿ø : ", "000002", "ÆíÀÇÁ¡2");
+		System.out.printf("%-10.10s-%-10.10s\n", k07_sdf.format(k07_cal.getTime()), "0002-0922");
+		System.out.printf("%-6.6s[%-20.20s]\n", "¿¬µ¿¸ğµâ : ", "00138705   20160504190049");
 
 	}
 

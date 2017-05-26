@@ -5,70 +5,64 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class print {
-
 	public static void main(String[] args) {
+		DecimalFormat k07_df = new DecimalFormat("###,###,###,###,###");
 		
-		DecimalFormat df = new DecimalFormat("###,###,###,###,###");
-		
-		// ê°€ê²© ë³€ìˆ˜
+		// °¡°İ º¯¼ö
 		int k07_iPrice = 21000;
-		// ì„¸ê¸ˆ ì œì™¸í•œ ë¬¼ê±´ê°’
+		// ¼¼±İ Á¦¿ÜÇÑ ¹°°Ç°ª
 		int k07_beforMoney = (int)(k07_iPrice/1.1);
-		// ë¬¼ê±´ ì„¸ê¸ˆ
+		// ¹°°Ç ¼¼±İ
 		double k07_tax = k07_iPrice - k07_beforMoney;
 		
-		int card = k07_iPrice;
-		int cash = 0;
-		if(card == 0)
-			cash = k07_iPrice;
+		int k07_card = k07_iPrice;
+		int k07_cash = 0;
+		if(k07_card == 0)
+			k07_cash = k07_iPrice;
 		else
-			cash = 0;
+			k07_cash = 0;
 		
 		Calendar k07_calt = Calendar.getInstance();
 		SimpleDateFormat k07_sdt = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
-		
 
-		System.out.printf("%30.30s\n", "ì˜   ìˆ˜   ì¦");
+		System.out.printf("%30.30s\n", "¿µ   ¼ö   Áõ");
 		System.out.printf("-----------------------------------------------------\n");
-		System.out.printf("%-100.100s\n", "ì¢…ë¡œìƒíšŒ(ë¶„ë‹¹ì„œí˜„ì )  129-17-77924");
-		System.out.printf("%-100.100s\n", "ì´ìƒì²   031 781 1596");
-		System.out.printf("%-100.100s\n", "ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ ì„œí˜„ë™ 269-3");
-		System.out.printf("%-100.100s\n", "í…Œì´ë¸”ëª… : 12");
-		System.out.printf("%-100.100s\n", "ì£¼ë¬¸ë²ˆí˜¸ : 20160425 01 00041");
+		System.out.printf("%-100.100s\n", "Á¾·Î»óÈ¸(ºĞ´ç¼­ÇöÁ¡)  129-17-77924");
+		System.out.printf("%-100.100s\n", "ÀÌ»óÃ¶  031 781 1596");
+		System.out.printf("%-100.100s\n", "¼º³²½Ã ºĞ´ç±¸ ¼­Çöµ¿ 269-3");
+		System.out.printf("%-100.100s\n", "Å×ÀÌºí¸í : 12");
+		System.out.printf("%-100.100s\n", "ÁÖ¹®¹øÈ£ : 20160425 01 00041");
 		System.out.printf("-----------------------------------------------------\n");
-//		System.out.printf("%-86.86s%d\n", "ì£¼ë¬¸í•©ê³„", k07_iPrice);
-		System.out.printf("%-80.80s", "ì£¼ë¬¸í•©ê³„");
-		System.out.printf("%10.10s\n",  df.format(k07_iPrice));
-		System.out.printf("%-80.80s", "í• ì¸ê¸ˆì•¡");
-		System.out.printf("%15.15s\n",  df.format(0));
-		System.out.printf("%-80.80s", "ë°›ì„ê¸ˆì•¡");
-		System.out.printf("%10.10s\n",  df.format(k07_iPrice));
+//		System.out.printf("%-86.86s%d\n", "ÁÖ¹®ÇÕ°è", k07_iPrice);
+		System.out.printf("%-30.30s", "ÁÖ¹®ÇÕ°è");
+		System.out.printf("%19.19s\n",  k07_df.format(k07_iPrice));
+		System.out.printf("%-30.30s", "ÇÒÀÎ±İ¾×");
+		System.out.printf("%19.19s\n",  k07_df.format(0));
+		System.out.printf("%-30.30s", "¹ŞÀ»±İ¾×");
+		System.out.printf("%19.19s\n",  k07_df.format(k07_iPrice));
 		System.out.printf("-----------------------------------------------------\n");
-		System.out.printf("%-18.18s %6.6s", "í˜„   ê¸ˆ", df.format(cash));
-		System.out.printf("%10.10s%14.14s\n", "ê³¼   ì„¸", df.format(k07_beforMoney));
-		System.out.printf("%-18.18s %6.6s", "ì¹´   ë“œ", df.format(card));
-		System.out.printf("%10.10s%14.14s\n", "ì„¸   ì•¡", df.format(k07_tax));
-		System.out.printf("%-18.18s%6.6s", "í¬ì¸íŠ¸", df.format(0));
-		System.out.printf("%10.10s%14.14s\n", "ë©´   ì„¸", df.format(0));
-		System.out.printf("%35.35s%14.14s\n", "ì˜ìˆ˜ê¸ˆì•¡", df.format(k07_iPrice));
+		System.out.printf("%-18.18s %6.6s", "Çö   ±İ", k07_df.format(k07_cash));
+		System.out.printf("%10.10s%14.14s\n", "°ú   ¼¼", k07_df.format(k07_beforMoney));
+		System.out.printf("%-18.18s %6.6s", "Ä«   µå", k07_df.format(k07_card));
+		System.out.printf("%10.10s%14.14s\n", "¼¼   ¾×", k07_df.format(k07_tax));
+		System.out.printf("%-18.18s%6.6s", "Æ÷ÀÎÆ®", k07_df.format(0));
+		System.out.printf("%10.10s%14.14s\n", "¸é   ¼¼", k07_df.format(0));
+		System.out.printf("%35.35s%14.14s\n", "¿µ¼ö±İ¾×", k07_df.format(k07_iPrice));
 		System.out.printf("-----------------------------------------------------\n");
-		if(card != 0){
-			System.out.printf("%28.28s\n", "[ìš°ë¦¬ì¹´ë“œ ì‹ ìš© ìŠ¹ì¸]");
-			System.out.printf("%-14.14s%20.20s\n", "ìŠ¹  ì¸  ì¼  ì‹œ  : ", k07_sdt.format(k07_calt.getTime()));
-			System.out.printf("%-100.100s\n", "ì¹´  ë“œ  ë²ˆ  í˜¸  : 55222059****2021");
-			System.out.printf("%-100.100s\n", "ìŠ¹  ì¸  ë²ˆ  í˜¸  : 79753574  í• ë¶€ê°œì›” : 00");
-			System.out.printf("%-14.14s%-20.20s\n", "ìŠ¹  ì¸  ê¸ˆ  ì•¡  :", df.format(k07_iPrice));
-			System.out.printf("%-100.100s\n", "ê°€  ë§¹  ë²ˆ  í˜¸  : 730461774  /  ë¹„ì”¨ì¹´ë“œì‚¬");
-			System.out.printf("%-100.100s\n", "ì‚¬ ì—… ì   ë²ˆí˜¸ : 129-17-77924");
+		if(k07_card != 0){
+			System.out.printf("%28.28s\n", "[¿ì¸®Ä«µå ½Å¿ë ½ÂÀÎ]");
+			System.out.printf("%-14.14s%20.20s\n", "½Â  ÀÎ  ÀÏ  ½Ã  : ", k07_sdt.format(k07_calt.getTime()));
+			System.out.printf("%-100.100s\n", "Ä«  µå  ¹ø  È£  : 55222059****2021");
+			System.out.printf("%-100.100s\n", "½Â  ÀÎ  ¹ø  È£  : 79753574  ÇÒºÎ°³¿ù : 00");
+			System.out.printf("%-14.14s%-20.20s\n", "½Â  ÀÎ  ±İ  ¾×  :", k07_df.format(k07_iPrice));
+			System.out.printf("%-100.100s\n", "°¡  ¸Í  ¹ø  È£  : 730461774  /  ºñ¾¾Ä«µå»ç");
+			System.out.printf("%-100.100s\n", "»ç ¾÷ ÀÚ   ¹øÈ£ : 129-17-77924");
 			System.out.printf("-----------------------------------------------------\n");
-			System.out.printf("%-40.40s%11.11s\n", "2016-04-25  12:44  CASHIER :", "ì§ì›");
+			System.out.printf("%-40.40s%11.11s\n", "2016-04-25  12:44  CASHIER :", "Á÷¿ø");
 			System.out.printf("-----------------------------------------------------\n");
-			System.out.printf("%-100.100s\n", "ê°ì‚¬ í•©ë‹ˆë‹¤.");
+			System.out.printf("%-100.100s\n", "°¨»ç ÇÕ´Ï´Ù.");
 		
 		}
-//		System.out.printf("%60.60s\n", "14,000");
-////		System.out.printf("%-100.100s\n", "í…Œì´ë¸”ëª… : 12");
-//		System.out.printf("%-100.100s\n", "ì£¼ë¬¸ë²ˆí˜¸ : 20160425 01 00041");
 	}
 
 }
