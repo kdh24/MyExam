@@ -2,8 +2,6 @@ package webPrograming.stringBuffer;
 
 import java.util.ArrayList;
 
-import oracle.net.aso.e;
-
 public class AList2 {
 	public static void main(String[] args) {
 		int iTestMAX=1000000;

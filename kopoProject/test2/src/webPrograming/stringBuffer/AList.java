@@ -2,8 +2,6 @@ package webPrograming.stringBuffer;
 
 import java.util.ArrayList;
 
-import oracle.net.aso.e;
-
 public class AList {
 	public static void main(String[] args) {
 		ArrayList iAL = new ArrayList();
