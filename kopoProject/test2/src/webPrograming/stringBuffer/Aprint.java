@@ -5,10 +5,9 @@ import java.util.ArrayList;
 public class Aprint {
 
 //	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 //		OneRec OneRec;
 
-		static ArrayList<OneRec2> ArrayOneRec = new ArrayList<OneRec2>();
+		static ArrayList<OneRec> ArrayOneRec = new ArrayList<OneRec>();
 		
 		static int sumkor=0;
 		static int sumeng=0;
@@ -24,7 +23,7 @@ public class Aprint {
 				int kor = (int)(Math.random()*100);	//국어점수 만들기
 				int eng = (int)(Math.random()*100);	//영어점수 만들기
 				int mat = (int)(Math.random()*100);	//수학점수 만들기
-				ArrayOneRec.add(new OneRec2(i,name,kor,eng,mat)); // 하나의 OneRec클래스를 생성 후 ArrayList에 집어넣었다.
+				ArrayOneRec.add(new OneRec(i,name,kor,eng,mat)); // 하나의 OneRec클래스를 생성 후 ArrayList에 집어넣었다.
 			}
 		}
 //	}

@@ -81,27 +81,39 @@ public class print3_1 {
 		System.out.printf("%-30.30s\n", "체크카드/신용카드 청구취소 반영은");
 		System.out.printf("%-30.30s\n\n", "최대 3''5일 소요 (주말,공휴일제외)");
 
-		// 현재 날짜 및 시간을 
+		// 현재 날짜 및 시간을 지정해준 포맷으로 출력
 		System.out.printf("%-6.6s%-20.20s %-13.13s\n", "[구  매]", sdf.format(k07_cal.getTime()), "POS:0009-2418");
 		System.out.printf("------------------------------------------------\n");
 		System.out.printf("%10.10s %10.10s %8.8s %8.8s\n", "상  품  명", "단  가", "수  량", "금  액");
 		System.out.printf("------------------------------------------------\n");
 
+		// 배열에 순차적으로 저장되어 있는 내용을 순차적으로 가져와서 출력해주는 부분
+		// 배열의 크기가 0부터 29까지 30개가 있으므로 30번 반복해서 실행이 된다
 		for(int i=0; i<k07_itemName.length; i++){
+			// 상품명에 한글이 몇개 들어있는지 확인해서 14.14s 에서 그만큼 숫자를 빼줘서 출력해준다
 			System.out.printf("%-5.5s%-" + String.valueOf(14-k07_HanCount(k07_itemName[i])) +"."+String.valueOf(14-k07_HanCount(k07_itemName[i]))+"s" +
+			// 삼항연산자를 사용해서 상품번호가 10보다 작으면 숫자 앞에 0을 붙여주고 면세물품이면 뒤에 *를 더해준다
 					 "%6.6s%10.10s%12.12s\n", i+1 < 10 ? "0"+String.valueOf(i+1) : i+1 + ((k07_taxfree[i] == false) ? "*" : ""), k07_itemName[i], k07_df.format(k07_price[i]), k07_df.format(k07_num[i]), k07_df.format(k07_price[i]*k07_num[i]));
 
+			// 상품이 과세물품이라면 세전금액과 세금 부분을 계산해준다.
 			if (k07_taxfree[i] == false) {
+				// 세전 금액을 구하기 위해 소비자 가격에서 1.1을 나눠준다 
+				// 나머지가 0으로 딱 떨어지지 않으면 5를 더해서 10으로 나누고 곱해주어 반올림 처리를 해준다
 				k07_beforeTax = ((int)(k07_price[i] / 1.1 % 10)) != 0 ? (int)(k07_price[i] / 1.1+5) /10 * 10 : (int)(k07_price[i] / 1.1);
+				// 구매 상품과 수량에 따른 세금을 계산해준다
 				k07_tax = (int) ((k07_price[i]-k07_beforeTax)*k07_num[i]);
+				// 구한 세금을 세금 총합 변수 taxSum에 누적시켜준다
 				k07_taxSum += k07_tax;
+				// 세전금액의 총합을 beforeTaxSum 변수에 누적시켜준다
 				k07_beforeTaxSum+= k07_beforeTax*k07_num[i];
-			}else
+			}else	// 면세상품에 대한 처리
 				k07_freeSum += k07_price[i]*k07_num[i];
 			
+			// 면세와 과세를 모두 포함한 전체 상품에 대한 누적값을 sum 변수에 저장
 			k07_sum+= k07_price[i]*k07_num[i];
 			
 		}
+		// 각각의 변수 값을 정해진 길이대로 화면에 출력해준다
 		System.out.printf("%20.20s %22.22s\n", "(*)면 세  물 품", k07_df.format(k07_freeSum));
 		System.out.printf("%20.20s %22.22s\n", "과 세  물 품", k07_df.format(k07_beforeTaxSum));
 		System.out.printf("%21.21s %22.22s\n", "부   가   세", k07_df.format(k07_taxSum));
