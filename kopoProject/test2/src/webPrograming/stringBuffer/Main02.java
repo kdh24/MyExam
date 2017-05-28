@@ -14,14 +14,35 @@ public class Main02 {
 
 		// 현재 날짜 및 시간을 어떤 포맷으로 사용할지 포맷을 정해준다	
 		SimpleDateFormat df = new SimpleDateFormat("YYYY.MM.dd HH:mm:ss");
-		
+//		
 		dataSet(); 		// 데이터 셋팅
 		dataSort();		// 데이터 정렬
-		HeaderPrint(1, df.format(cal.getTime()));	// 헤더인쇄
-		for(int i=0; i<ArrayOneRec.size(); i++){ //내용인쇄
-			ItemPrint(i);
+//		HeaderPrint(1, df.format(cal.getTime()));	// 헤더인쇄
+//		for(int i=0; i<ArrayOneRec.size(); i++){ //내용인쇄
+//			ItemPrint(i);
+//		}
+//		TailPrint(); // 꼬리인쇄
+//		
+		int pageNum = 10;
+		System.out.println(ArrayOneRec.size());
+		int maxLoop = ArrayOneRec.size()/pageNum;
+		int pageCount = 1;
+		int dataCount = 0;
+		
+		for(int i = 0; i<maxLoop; i++){
+			HeaderPrint(pageCount,df.format(cal.getTime()));
+			for(int j=dataCount; j<pageNum; j++){
+				ItemPrint(j);
+//				dataCount++;
+				System.out.printf(" %d\n", j);
+			}
+			dataCount+=pageNum;
+			pageNum += pageNum;
+			pageCount++;
+//			maxLoop--;
 		}
-		TailPrint(); // 꼬리인쇄
+		pageNum=0;
+		
 	}
 	
 	static ArrayList<OneRec> ArrayOneRec = new ArrayList<>();
@@ -36,7 +57,7 @@ public class Main02 {
 	static int sumMatTotal=0;
 	static int sumSumTotal=0;
 	static int sumAveTotal=0;
-	static final int iPerson=5;
+	static final int iPerson=50;
 	
 	//데이터 만들기
 	public static void dataSet(){
@@ -50,6 +71,8 @@ public class Main02 {
 			eng = (int)(Math.random()*100);	//영어점수 만들기
 			mat = (int)(Math.random()*100);	//수학점수 만들기
 			ArrayOneRec.add(new OneRec(i,name,kor,eng,mat)); // 하나의 OneRec클래스를 생성 후 ArrayList에 집어넣었다.
+
+			System.out.println(i);
 		}
 	}
 	
@@ -64,7 +87,7 @@ public class Main02 {
 		System.out.printf("%20.20s\n", "성적집계표");
 		System.out.printf("%-4.4s: %-2d %40.40s\n", "PAGE", page, "출력일자 :" + cal);
 		System.out.printf("====================================================\n");
-		System.out.printf("%4s %4s %5s %3s %3s %3s %3s\n", "번호","이름","국어","영어","수학","합계","평균");
+		System.out.printf("%4s %4s %5s %3s %3s %3s %4s\n", "번호","이름","국어","영어","수학","합계","평균");
 		System.out.printf("====================================================\n");
 	}
 	
@@ -73,7 +96,7 @@ public class Main02 {
 		OneRec rec;
 		
 		rec=ArrayOneRec.get(i);
-		System.out.printf("%4d %8s %4d %4d %5d  %4d  %6d\n", rec.student_id(), rec.name(), rec.kor(), rec.eng(), rec.mat(), rec.sum(), (int)rec.ave());
+		System.out.printf("%4d %8s %4d %4d %5d  %4d  %5d\n", rec.student_id(), rec.name(), rec.kor(), rec.eng(), rec.mat(), rec.sum(), (int)rec.ave());
 		
 		sumKor+=rec.kor();
 		sumEng+=rec.eng();
@@ -91,6 +114,7 @@ public class Main02 {
 		System.out.printf("수학합계 %d	수학평균: %6.2f\n",sumMat, sumMat/(double)ArrayOneRec.size());
 		System.out.printf("====================================================\n");
 		System.out.printf("반평균합계 %d		반평균: %6.2f\n",sumAve,sumAve/(double)ArrayOneRec.size());
+		System.out.println();
 	}
 	
 	// ArrayList 정렬
