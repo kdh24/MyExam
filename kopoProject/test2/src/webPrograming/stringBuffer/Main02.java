@@ -24,20 +24,24 @@ public class Main02 {
 //		TailPrint(); // 꼬리인쇄
 //		
 		int pageNum = 10;
-		System.out.println(ArrayOneRec.size());
-		int maxLoop = ArrayOneRec.size()/pageNum;
+//		System.out.println(ArrayOneRec.size());
+		int maxLoop = ArrayOneRec.size() % (double)pageNum != 0 ?  (ArrayOneRec.size() / pageNum)+1:ArrayOneRec.size() % pageNum ;
+		System.out.println(maxLoop);
 		int pageCount = 1;
 		int dataCount = 0;
 		
 		for(int i = 0; i<maxLoop; i++){
 			HeaderPrint(pageCount,df.format(cal.getTime()));
-			for(int j=dataCount; j<pageNum; j++){
+			for(int j=dataCount; j<dataCount+pageNum; j++){
 				ItemPrint(j);
 //				dataCount++;
-				System.out.printf(" %d\n", j);
+//				System.out.printf(" %d\n", j);
+//				System.out.printf(" %d\n", maxLoop);
+				
 			}
-			dataCount+=pageNum;
-			pageNum += pageNum;
+			dataCount = (i+1)* pageNum;
+//			System.out.println(dataCount);
+//			pageNum += pageNum;
 			pageCount++;
 //			maxLoop--;
 		}
@@ -57,7 +61,7 @@ public class Main02 {
 	static int sumMatTotal=0;
 	static int sumSumTotal=0;
 	static int sumAveTotal=0;
-	static final int iPerson=50;
+	static final int iPerson=52;
 	
 	//데이터 만들기
 	public static void dataSet(){
@@ -72,7 +76,7 @@ public class Main02 {
 			mat = (int)(Math.random()*100);	//수학점수 만들기
 			ArrayOneRec.add(new OneRec(i,name,kor,eng,mat)); // 하나의 OneRec클래스를 생성 후 ArrayList에 집어넣었다.
 
-			System.out.println(i);
+//			System.out.println(i);
 		}
 	}
 	
