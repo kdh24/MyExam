@@ -41,34 +41,34 @@ public class print3_2 {
 
 		int num = 0;
 		// 구매할 품목명을 String 배열에 순차적으로 30개를 저장시켜 놓았다
-		String [] k07_itemName = {"초코파이", "돌김", "빅파이2000", "감귤주스", "아침햇살",
-				"칠성사이다", "우유속모카", "고구마", "빼빼로", "맥콜",
+		String [] k07_itemName = {"빅파이", "한라봉", "빅파이2000", "감귤주스", "아침햇살",
+				"칠성사이다", "액션가면", "오징어짬뽕4입", "빼빼로", "맥콜",
 				"닭꼬치", "짜파게티", "신라면", "햇반", "좋은데이",
-				"요플레", "어묵400g", "오뚜기케찹", "오뚜기진라면", "두부200g",
+				"오란씨", "어묵400g", "오뚜기케찹", "오뚜기진라면", "두부200g",
 				"오징어땅콩", "맥심카누", "감자", "오비맥주", "칭따오",
-				"오뚜기카레", "감자 400g", "농심백산수", "호떡믹스", "파프리카"}; // 항목명 30개이상
-// 구매할 품목의 가격에 해당하는 금액을 int형 배열에 30개 저장
-int [] k07_price = {1400, 1241, 3300, 2500, 820,
-			17500, 10500, 1000, 1200, 7100,
-			1000, 1400, 1500, 2400, 1700,
-			1500, 1300, 2800, 1600, 31500,
-			230, 2200, 1900, 8500, 1000,
-			800, 1400, 400, 7000, 5600};
-// 구매할 상품을 몇개나 살지 int형 배열에 저장시켰다
-int [] k07_num={8,4,1,3,5,
-		3,6,4,1,7,
-		3,5,2,1,1,
-		2,3,2,1,1,
-		3,5,6,2,3,
-		2,1,2,3,4};
-// 구매할 품목의 상품이 면세상품인지 과세상품인지 true와 false로 구분해서 
-// boolean형 배열에 순차적으로 저장했다
-boolean [] k07_taxfree={false, true, false, false, true,
-	false, true, false, true, false,
-	false, false, false, false, false,
-	true, false, false, false, false,
-	false, false, true, false, true,
-	true, true, false, false, false};
+				"오뚜기카레", "감자 400g", "오로나민C", "호떡믹스", "파프리카"}; // 항목명 30개이상
+		// 구매할 품목의 가격에 해당하는 금액을 int형 배열에 30개 저장
+		int [] k07_price = {14200, 1241, 3300, 2500, 820,
+					14200, 10500, 1000, 1200, 7100,
+					15000, 1400, 1500, 2400, 1700,
+					1500, 1300, 2800, 1600, 31500,
+					230, 2200, 1900, 2500, 1000,
+					100, 1400, 400, 7000, 5600};
+		// 구매할 상품을 몇개나 살지 int형 배열에 저장시켰다
+		int [] k07_num={8,4,1,3,5,
+				3,6,4,1,7,
+				3,5,2,1,1,
+				2,3,2,1,1,
+				3,5,6,2,3,
+				2,1,2,3,4};
+		// 구매할 품목의 상품이 면세상품인지 과세상품인지 true와 false로 구분해서 
+		// boolean형 배열에 순차적으로 저장했다
+		boolean [] k07_taxfree={false, true, false, true, true,
+				true, true, false, true, false,
+			false, false, true, false, false,
+			true, true, false, false, false,
+			false, false, true, false, true,
+			true, true, false, true, false};
 		
 		
 		// 상품의 세전 가격을 저장할 변수
@@ -99,12 +99,6 @@ boolean [] k07_taxfree={false, true, false, false, true,
 		// 배열에 순차적으로 저장되어 있는 내용을 순차적으로 가져와서 출력해주는 부분
 		// 배열의 크기가 0부터 29까지 30개가 있으므로 30번 반복해서 실행이 된다
 		for(int i=0; i<k07_itemName.length; i++){
-//			if(k07_itemName[i].getBytes().length>20){
-//				k07_itemName[i]=new String(k07_itemName[i].getBytes(), 0, 20);
-//			}
-//			for(int j=0; j<20-(k07_itemName[i].getBytes().length);j++){
-//				k07_itemName[i]=k07_itemName[i]+" ";
-//			}
 			String iName = HanBlackBackword(k07_itemName[i], 24);
 			
 			// 상품명에 한글이 몇개 들어있는지 확인해서 14.14s 에서 그만큼 숫자를 빼줘서 출력해준다
@@ -124,7 +118,7 @@ boolean [] k07_taxfree={false, true, false, false, true,
 			k07_sum+= k07_price[i]*k07_num[i];
 			
 		}
-		k07_beforeTax = (int)((k07_beforeTaxSum+1)/1.1);
+		k07_beforeTax = (int)((k07_beforeTaxSum+0.1)/1.1);
 		// 각각의 변수 값을 정해진 길이대로 화면에 출력해준다
 		System.out.printf("%30.30s %22.22s\n", "(*)면 세  물 품", k07_df.format(k07_freeSum));
 		System.out.printf("%30.30s %22.22s\n", "과 세  물 품", k07_df.format((int)(k07_beforeTax)));
