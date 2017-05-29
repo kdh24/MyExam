@@ -14,16 +14,16 @@ public class print2 {
 		SimpleDateFormat k07_sdf = new SimpleDateFormat("YYYY/MM/dd");
 		
 		// 상품명과 상품코드에 대한 변수
-		String k07_product1 = "풀무원샘물";
-		String k07_productCode1 = "8809169718205";
-		String k07_product2 = "드링킹요구르트";
-		String k07_productCode2 = "8801155822828";
+		String k07_product1 = "하늘보리";
+		String k07_productCode1 = "123648912354";
+		String k07_product2 = "솔의눈";
+		String k07_productCode2 = "145612777";
 		
 		// 상품가격과 상품 구매 수량에 관한 변수 선언 및 초기화
-		int k07_p_price1=600;
-		int k07_p_price2=1600;
-		int k07_p_num1=1;
-		int k07_p_num2=1;
+		int k07_p_price1=1600;
+		int k07_p_price2=1100;
+		int k07_p_num1=3;
+		int k07_p_num2=6;
 		// 상품 가격과 수량을 곱해서 총 가격을 구하는 변수 sum
 		int k07_sum = k07_p_price1*k07_p_num1+k07_p_price2*k07_p_num2;
 		
@@ -48,7 +48,7 @@ public class print2 {
 		System.out.printf("-------------------------------------------------\n");
 		// 구매 상품명과 가격 수량에 대한 변수를 정해진 형식대로 출력해준다 
 		System.out.printf("%-100.100s\n", k07_product1+k07_product1);
-		System.out.printf("%-30.30s%4.4s%5.5s%10.10s\n", k07_productCode1, k07_df.format(k07_p_price1), k07_df.format(k07_p_num1), k07_df.format(k07_p_price1*k07_p_num1));
+		System.out.printf("%-28.28s%6.6s%5.5s%10.10s\n", k07_productCode1, k07_df.format(k07_p_price1), k07_df.format(k07_p_num1), k07_df.format(k07_p_price1*k07_p_num1));
 		System.out.printf("%-100.100s\n", k07_product2+k07_product2);
 		System.out.printf("%-28.28s%6.6s%5.5s%10.10s\n", k07_productCode2, k07_df.format(k07_p_price2), k07_df.format(k07_p_num2), k07_df.format(k07_p_price2*k07_p_num2));
 		// 세전금액, 세금, 총액 등 각각의 금액을 변수를 이용해서 화면에 출력해준다

@@ -34,34 +34,34 @@ public class print3_1 {
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY/MM/dd HH:mm");
 		
 		// 구매할 품목명을 String 배열에 순차적으로 30개를 저장시켜 놓았다
-		String [] k07_itemName = {"초코파이", "바나나우유", "건포도", "오렌지주스", "초코에몽",
-							"칠성사이다", "우유속모카", "맥스봉", "빼빼로", "볼펜",
-							"서울우유1000L", "짜파게티", "신라면", "햇반", "좋은데이",
+		String [] k07_itemName = {"초코파이", "돌김", "빅파이2000", "감귤주스", "아침햇살",
+							"칠성사이다", "우유속모카", "고구마", "빼빼로", "맥콜",
+							"닭꼬치", "짜파게티", "신라면", "햇반", "좋은데이",
 							"요플레", "어묵400g", "오뚜기케찹", "오뚜기진라면", "두부200g",
-							"콘푸로스트", "맥심카누", "참이슬", "오비맥주", "칭따오",
-							"안성탕면", "제주삼다수", "농심백산수", "호떡믹스", "파프리카"}; // 항목명 30개이상
+							"오징어땅콩", "맥심카누", "감자", "오비맥주", "칭따오",
+							"오뚜기카레", "감자 400g", "농심백산수", "호떡믹스", "파프리카"}; // 항목명 30개이상
 		// 구매할 품목의 가격에 해당하는 금액을 int형 배열에 30개 저장
-		int [] k07_price = {4000, 1000, 3300, 2500, 800,
-						1700, 1500, 1000, 1200, 700,
-						2900, 1400, 1500, 2000, 1700,
-						3500, 1300, 2800, 1400, 1500,
-						4000, 2200, 1600, 2500, 3000,
-						1500, 1000, 1100, 3000, 2600};
+		int [] k07_price = {100, 1000, 3300, 2500, 820,
+						17500, 10500, 1000, 1200, 7100,
+						1000, 1400, 1500, 2400, 1700,
+						1500, 1300, 2800, 1600, 31500,
+						230, 2200, 1900, 8500, 1000,
+						800, 1400, 400, 7000, 5600};
 		// 구매할 상품을 몇개나 살지 int형 배열에 저장시켰다
-		int [] k07_num={2,4,1,3,5,
-					3,6,2,1,2,
-					3,4,2,1,1,
-					2,3,4,1,1,
+		int [] k07_num={8,4,1,3,5,
+					3,6,4,1,7,
+					3,5,2,1,1,
+					2,3,2,1,1,
 					3,5,6,2,3,
-					2,1,1,3,4};
+					2,1,2,3,4};
 		// 구매할 품목의 상품이 면세상품인지 과세상품인지 true와 false로 구분해서 
 		// boolean형 배열에 순차적으로 저장했다
-		boolean [] k07_taxfree={true, true, false, true, true,
-				true, true, false, true, true,
-				true, true, true, true, false,
-				true, true, true, true, true,
-				false, true, false, true, true,
-				true, true, false, true, false};
+		boolean [] k07_taxfree={false, true, false, false, true,
+				false, true, false, true, false,
+				false, false, false, false, false,
+				true, false, false, false, false,
+				false, false, true, false, true,
+				true, true, false, false, false};
 		// 상품의 세전 가격을 저장할 변수
 		int k07_beforeTax =0;
 		// 상품별 세전가격의 누적값을 저장할 변수
@@ -93,7 +93,8 @@ public class print3_1 {
 			// 상품명에 한글이 몇개 들어있는지 확인해서 14.14s 에서 그만큼 숫자를 빼줘서 출력해준다
 			System.out.printf("%-5.5s%-" + String.valueOf(14-k07_HanCount(k07_itemName[i])) +"."+String.valueOf(14-k07_HanCount(k07_itemName[i]))+"s" +
 			// 삼항연산자를 사용해서 상품번호가 10보다 작으면 숫자 앞에 0을 붙여주고 면세물품이면 뒤에 *를 더해준다
-					 "%6.6s%10.10s%12.12s\n", i+1 < 10 ? "0"+String.valueOf(i+1) : i+1 + ((k07_taxfree[i] == false) ? "*" : ""), k07_itemName[i], k07_df.format(k07_price[i]), k07_df.format(k07_num[i]), k07_df.format(k07_price[i]*k07_num[i]));
+					 "%6.6s%10.10s%12.12s\n", (i+1 < 10 ? "0"+String.valueOf(i+1) : i+1) + ((k07_taxfree[i] == true) ? "*" : ""),
+							 		k07_itemName[i], k07_df.format(k07_price[i]), k07_df.format(k07_num[i]), k07_df.format(k07_price[i]*k07_num[i]));
 
 			// 상품이 과세물품이라면 세전금액과 세금 부분을 계산해준다.
 			if (k07_taxfree[i] == false) {

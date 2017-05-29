@@ -6,13 +6,15 @@ import java.util.Calendar;
 
 public class print4 {
 	public static void main(String[] args) {
-		HanBlackPrint h_Black;
-
+		// 1000(천) 단위마다 콤마 처리를 하기 위한 DecimalFormat 객체 생성 및 포맷 지정
 		DecimalFormat df = new DecimalFormat("###,###,###,###,###");
 		
+		// 날짜값을 가져오기 위한 Calendar 객체 생성 및 선언
 		Calendar k07_cal = Calendar.getInstance();
+		// 날짜를 지정해주는 포맷으로 출력하기 위한 SimpleDateFormat 클래스
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY/MM/dd HH:mm");
 		
+		// String 배열에 각 항목을 순차적으로 입력해준다.
 		String [] OneRec= {
 				"01   초코파이       4,000         2       8,000",
 				"02   바나나우유     1,000         4       4,000",
@@ -44,34 +46,36 @@ public class print4 {
 				"28   농심백산수     1,100         1       1,100",
 				"29   호떡믹스       3,000         3       9,000",
 				"30   파프리카       2,600         4      10,400"};
-		
-		String[] data = new String[5];
-		String[] arrayPrice = new String[2];
-		int price=0;
-		int num=0;
 
 		// 토탈 바이트 47
-		String pId = new String(OneRec[0].getBytes(),0,4);	// 상품명
-		String pName = new String(OneRec[0].getBytes(),5,15);	// 상품명
-		int pPrice = Integer.parseInt(new String(OneRec[0].getBytes(),20,10).trim().replaceAll(",", ""));	// 상품가격
-		int pNum = Integer.parseInt(new String(OneRec[0].getBytes(),30,10).trim().replaceAll(",", ""));	// 구매수량
-		int pTotal = Integer.parseInt(new String(OneRec[0].getBytes(),40,7).trim().replaceAll(",", ""));	// 총액
+		// OneRec 배열의 각각의 항목에 대한 상품번호, 상품명, 상품가격, 수량, 총액을  처리랄 변수 선언
+		String k07_pId = null;	// 상품 번호
+		String k07_pName = null;	// 상품명
+		int k07_pPrice = 0;	// 상품가격
+		int k07_pNum = 0;	// 구매수량
+		int k07_pTotal = 0;	// 총액
 
+		// OneRec 배열의 길이만큼 반복해서 처리해주는 for 반복문
 		for(int i=0; i<OneRec.length; i++){
 			// 토탈 바이트 47
-			pId = new String(OneRec[i].getBytes(),0,4);	// 상품명
-			pName = new String(OneRec[i].getBytes(),5,15);	// 상품명
-			pPrice = Integer.parseInt(new String(OneRec[i].getBytes(),20,10).trim().replaceAll(",", ""));	// 상품가격
-			pNum = Integer.parseInt(new String(OneRec[i].getBytes(),30,10).trim().replaceAll(",", ""));	// 구매수량
-			pTotal = Integer.parseInt(new String(OneRec[i].getBytes(),40,7).trim().replaceAll(",", ""));	// 총액
+			//OneRec 배열의 각각의 항목에 대한 상품번호, 상품명, 상품가격, 수량, 총액의 값을 
+			// 각각의 변수에 대입해준다(각각의 위치에 해당하는 Byte 값으로 가져와서 콤마는 없애주고 앞뒤 공백도 제거해준다)
+			k07_pId = new String(OneRec[i].getBytes(),0,4);	// 상품명
+			k07_pName = new String(OneRec[i].getBytes(),5,15);	// 상품명
+			k07_pPrice = Integer.parseInt(new String(OneRec[i].getBytes(),20,10).trim().replaceAll(",", ""));	// 상품가격
+			k07_pNum = Integer.parseInt(new String(OneRec[i].getBytes(),30,10).trim().replaceAll(",", ""));	// 구매수량
+			k07_pTotal = Integer.parseInt(new String(OneRec[i].getBytes(),40,7).trim().replaceAll(",", ""));	// 총액
 			
-			if(pPrice * pNum != pTotal){
+			// 배열에서 가져온 가격과 수량을 곱한 값이 총액과 맞지 않으면 실행
+			if(k07_pPrice * k07_pNum != k07_pTotal){
 				System.out.printf("****************************************************\n");
+				// 오류값에 대한 부분을 화면에 출력해준다
 				System.out.printf("오류[%s]\n",OneRec[i].toString());
 				// 마지막 계산값이 잘못되었으므로 제대로 된 계산값을 구해 해당 위치만 바꿔서 다시 넣어준다.
-				OneRec[i]= OneRec[i].toString().replaceAll(new String(OneRec[i].getBytes(),40,7).trim(), df.format(pPrice*pNum));
-				
-//				System.out.printf("수정[%s]\n",OneRec[i].toString().replaceAll(new String(OneRec[i].getBytes(),40,7).trim(), df.format(pPrice*pNum)));
+				// replaceAll 함수를 사용한다.
+				OneRec[i]= OneRec[i].toString().replaceAll(new String(OneRec[i].getBytes(),40,7).trim(), df.format(k07_pPrice*k07_pNum));
+
+				// 마지막 계산값을 제대로 된 값으로 변경해줬으므로 바뀐 값을 다시 출력해서 확인한다
 				System.out.printf("수정[%s]\n",OneRec[i].toString());
 				System.out.printf("****************************************************\n");
 			}

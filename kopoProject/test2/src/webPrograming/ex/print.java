@@ -10,7 +10,7 @@ public class print {
 		DecimalFormat k07_df = new DecimalFormat("###,###,###,###,###");
 		
 		// 가격 변수
-		int k07_iPrice = 21000;
+		int k07_iPrice = 17500;
 		// 세금 제외한 물건값
 		int k07_beforMoney = (int)(k07_iPrice/1.1);
 		// 물건 세금
