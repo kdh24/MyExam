@@ -11,12 +11,12 @@ import java.io.IOException;
 public class Lec03 {
 	public static void main(String[] args) throws IOException {
 		// \은 특수문자이므로 \\ 두 개를 써야 한다.
-		File f = new File("c:\\test\\전국무료와이파이표준데이터.txt");
+		File f = new File("C:\\Users\\kdh24\\Desktop\\test\\전국무료와이파이표준데이터.txt");
 		BufferedReader br = new BufferedReader(new FileReader(f));
 
-		File f1 = new File("c:\\test\\전국무료와이파이표준데이터_SKT.txt");
-		File f2 = new File("c:\\test\\전국무료와이파이표준데이터_KT.txt");
-		File f3 = new File("c:\\test\\전국무료와이파이표준데이터_LGU.txt");
+		File f1 = new File("C:\\Users\\kdh24\\Desktop\\test\\전국무료와이파이표준데이터_SKT.txt");
+		File f2 = new File("C:\\Users\\kdh24\\Desktop\\test\\전국무료와이파이표준데이터_KT.txt");
+		File f3 = new File("C:\\Users\\kdh24\\Desktop\\test\\전국무료와이파이표준데이터_LGU.txt");
 		BufferedWriter bw1 = new BufferedWriter(new FileWriter(f1));
 		BufferedWriter bw2 = new BufferedWriter(new FileWriter(f2));
 		BufferedWriter bw3 = new BufferedWriter(new FileWriter(f3));
@@ -40,21 +40,20 @@ public class Lec03 {
 		while ((readtxt = br.readLine()) != null) {
 			String[] field = readtxt.split("\t");
 
-//			System.out.println(field[5].trim().substring(0, 2));
-			if (field[5].trim().equals("SKT") || field[5].trim().toLowerCase().equals("sk텔레콤")
-					|| field[5].trim().equals("SK") || field[5].trim().equals("SK, KT, LG U+") || field[5].trim().substring(0, 2).toLowerCase().equals("sk")) {
+//			System.out.println(field[5].trim().replace("\"", "").substring(0, 2));
+			if (field[5].trim().equals("SKT") 
+					|| field[5].trim().replace("\"", "").substring(0, 2).toLowerCase().equals("sk")) {
 				if (field[5].trim() != "SKT")
 					field[5] = "SKT";
 				bw1.write(readtxt);
 				bw1.newLine();
-			} else if (field[5].trim().equals("KT")) {
+			} else if (field[5].trim().equals("KT")
+					|| field[5].trim().replace("\"", "").substring(0, 2).toLowerCase().equals("kt")) {
+				
 				bw2.write(readtxt);
 				bw2.newLine();
-			} else if (field[5].trim().equals("LGU+") || field[5].trim().equals("LGT")
-					|| field[5].trim().equals("LU G+")) {
-				if (field[5].trim() != "LGU+") {
-					field[5] = "LGU+";
-				}
+			} else if (field[5].trim().equals("LGU+") 
+						|| field[5].trim().replace("\"", "").substring(0, 2).toLowerCase().equals("lg")) {
 				bw3.write(readtxt);
 				bw3.newLine();
 			} else if (field[5].trim().equals("LG U+")) {

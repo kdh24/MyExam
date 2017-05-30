@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Lec02_3 {
 	public static void main(String[] args) throws IOException {
 		// \은 특수문자이므로 \\ 두 개를 써야한다
-		File f = new File("c:\\test\\전국주차장표준데이터.txt");
+		File f = new File("C:\\Users\\kdh24\\Desktop\\test\\전국주차장표준데이터.txt");
 		// 파일을 읽이 위한 버퍼 클래스 생성 및 선언
 		BufferedReader br = new BufferedReader(new FileReader(f));
 		
@@ -23,6 +23,13 @@ public class Lec02_3 {
 		}
 		// 빈 파일이 아닐때 처음으로 가져온 값은 항목의 제목부분이므로 field_name 배열에 순차로 저장 
 		String[] field_name = readtxt.split("\t");
+		for(int i=0; i<field_name.length; i++){
+			System.out.println(field_name[i]);
+		}
+		field_name = readtxt.split("\t");
+		for(int i=0; i<field_name.length; i++){
+			System.out.println(field_name[i]);
+		}
 		
 //		System.out.println(field_name[1].length());
 		//융합기술 우리집 위도경도, 지도에서 알아보기
