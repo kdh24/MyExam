@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Lec02 {
+public class Lec02_2 {
 	public static void main(String[] args) throws IOException {
 		// \은 특수문자이므로 \\ 두 개를 써야한다
 		File f = new File("c:\\test\\전국무료와이파이표준데이터.txt");
@@ -27,6 +27,12 @@ public class Lec02 {
 		//융합기술 우리집 위도경도, 지도에서 알아보기
 		double lat=37.3860521;
 		double lng=127.1214038;
+		// 최대 거리 최소거리 변수
+		double distMax=0.0;
+		double distMin=0.0;
+		// 최대,최소값 항목을 저장하기 위한 String 배열
+		String[] Max =new String[3];
+		String[] Min =new String[3];
 		
 		// 반복 횟수를 알기위한 int 변수
 		int LineCnt=0;
@@ -44,9 +50,41 @@ public class Lec02 {
 			 + Math.pow(Double.parseDouble(field[13])-lng,2));
 			// 거리 구하는 식을 이용해 현재 지점과의 거리를 구해서 화면에 출력해준다
 			System.out.printf(" 현재지점과 거리 : %f\n", dist); // 13번 : 경도주소
+			if(LineCnt == 0){ // 처음에 실행된 거리값으로 초기화 해준다
+				distMax = dist;
+				distMin = dist;
+			}else{// 처음이 아닐때 아래와 같이 값을 비교 연산 처리
+				// 새로 구한 거리가 distMax 보다 크면 최대값이므로 distMax 변수에 대입해준다
+				if (distMax < dist) {
+					distMax = dist;
+					// 최대값의 항목들로 Max 배열에 대입해준다
+					Max[0] = field[9] == null ? "" : field[9];
+					Max[1] = field[12];
+					Max[2] = field[13];
+				}
+				// 새로 구한 거리가 distMax 보다 작으면 최소값이므로 distMin 변수에 대입해준다
+				if (distMin > dist) {
+					distMin = dist;
+					// 최소값의 항목들로 Min 배열에 대입해준다
+					Min[0] = field[9];
+					Min[1] = field[12];
+					Min[2] = field[13];
+				}
+			}
 			// 한번 실행될때마다 반복횟수 증가
 			LineCnt++;
 		}
+
+		System.out.printf("*******************************\n", LineCnt);
+
+		System.out.printf("제일 먼 거리  주소 %s\n",Max[0]);
+		System.out.printf("제일 먼 거리  위도 %s\n",Max[1]);
+		System.out.printf("제일 먼 거리  경도 %s\n",Max[2]);
+		System.out.printf("제일 먼 거리 값 : %s\n", distMax);
+		System.out.printf("제일 가까운  주소 %s\n",Min[0]);
+		System.out.printf("제일 가까운  위도 %s\n",Min[1]);
+		System.out.printf("제일 가까운  경도 %s\n",Min[2]);
+		System.out.printf("제일 가까운 거리 값 : %s\n", distMin);
 		// 버퍼 클래스 종료처리
 		br.close();
 	}

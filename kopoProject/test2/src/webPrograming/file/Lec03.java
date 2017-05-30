@@ -40,8 +40,9 @@ public class Lec03 {
 		while ((readtxt = br.readLine()) != null) {
 			String[] field = readtxt.split("\t");
 
+//			System.out.println(field[5].trim().substring(0, 2));
 			if (field[5].trim().equals("SKT") || field[5].trim().toLowerCase().equals("skÅÚ·¹ÄÞ")
-					|| field[5].trim().equals("SK") || field[5].trim().equals("SK, KT, LG U+")) {
+					|| field[5].trim().equals("SK") || field[5].trim().equals("SK, KT, LG U+") || field[5].trim().substring(0, 2).toLowerCase().equals("sk")) {
 				if (field[5].trim() != "SKT")
 					field[5] = "SKT";
 				bw1.write(readtxt);
