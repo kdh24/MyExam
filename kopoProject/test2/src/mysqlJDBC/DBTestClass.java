@@ -50,19 +50,19 @@ public class DBTestClass {
 			
 //			stmt.execute("ALTER TABLE examtable ADD total int");
 			
-	/*		stmt.execute("INSERT INTO examtable(name, studentid, kor, eng, mat) values ('효민', 209901, 95, 100, 95);");
+	/*		stmt.execute("INSERT INTO examtable(name, studentid, kor, eng, mat) values ('�슚誘�', 209901, 95, 100, 95);");
 			stmt.execute("INSERT INTO examtable (name, studentid, kor, eng, mat)"
-					+ " values ('보람', 209902, 95, 95, 95);");
+					+ " values ('蹂대엺', 209902, 95, 95, 95);");
 			stmt.execute("INSERT INTO examtable (name, studentid, kor, eng, mat)"
-					+ " values ('은정', 209903, 100, 100, 100);");
+					+ " values ('���젙', 209903, 100, 100, 100);");
 			stmt.execute("INSERT INTO examtable (name, studentid, kor, eng, mat)"
-					+ " values ('지연', 209904, 95, 95, 90);");
+					+ " values ('吏��뿰', 209904, 95, 95, 90);");
 			stmt.execute("INSERT INTO examtable (name, studentid, kor, eng, mat)"
-					+ " values ('소연', 209905, 80, 100, 70);");
+					+ " values ('�냼�뿰', 209905, 80, 100, 70);");
 			stmt.execute("INSERT INTO examtable (name, studentid, kor, eng, mat)"
-					+ " values ('큐리', 209906, 100, 100, 70);");
+					+ " values ('�걧由�', 209906, 100, 100, 70);");
 			stmt.execute("INSERT INTO examtable (name, studentid, kor, eng, mat)"
-					+ " values ('화영', 209907, 70, 70, 70);");
+					+ " values ('�솕�쁺', 209907, 70, 70, 70);");
 	*/		
 			
 //			stmt.execute("delete from examtable;");
@@ -78,7 +78,7 @@ public class DBTestClass {
 	*/		
 	/*		ResultSet rset = stmt.executeQuery("show tables;");
 			while (rset.next()) {
-				// 결과물 처리
+				// 寃곌낵臾� 泥섎━
 				System.out.println(rset.getString(1));
 			}
 			rset.close();
