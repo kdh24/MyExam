@@ -36,6 +36,7 @@ public class Lec02_2 {
 		
 		// 반복 횟수를 알기위한 int 변수
 		int LineCnt=0;
+		int cNum=0;
 		// 파일이 비어있지 않으면 가져와서 반복처리
 		while((readtxt=br.readLine())!=null){
 			// 탭(\t)을 구분자로 버퍼에서 가져온 한줄의 값(readtxt)를 field 배열에 나눠서 저장해준다
@@ -58,7 +59,7 @@ public class Lec02_2 {
 				if (distMax < dist) {
 					distMax = dist;
 					// 최대값의 항목들로 Max 배열에 대입해준다
-					Max[0] = field[9] == null ? "" : field[9];
+					Max[0] = field[9].trim().equals("") || field[9] == null ? field[8] : field[9];
 					Max[1] = field[12];
 					Max[2] = field[13];
 				}
@@ -66,7 +67,7 @@ public class Lec02_2 {
 				if (distMin > dist) {
 					distMin = dist;
 					// 최소값의 항목들로 Min 배열에 대입해준다
-					Min[0] = field[9];
+					Min[0] = field[9].trim().equals("") || field[9] == null ? field[8] : field[9];
 					Min[1] = field[12];
 					Min[2] = field[13];
 				}

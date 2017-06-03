@@ -41,7 +41,17 @@ public class Lec02_3 {
 		// 파일이 비어있지 않으면 가져와서 반복처리
 		while((k07_readtxt=k07_br.readLine())!=null){
 			// 탭(\t)을 구분자로 버퍼에서 가져온 한줄의 값(readtxt)를 field 배열에 나눠서 저장해준다
+			
 			String[] k07_field = k07_readtxt.split("\t");
+			
+			
+			if(k07_LineCnt == 0){
+				System.out.println(k07_field_name.length);
+				for(int i=0; i<k07_field_name.length; i++){
+					System.out.println(k07_field_name[i]);
+				}
+			}
+			
 			// 나눠서 가져온 값 기준으로 보기 원하는 항목만 index 값으로 화면에 출력해준다
 			if(k07_field.length > 32){
 				System.out.printf("**[%d번째 항목]***********\n", k07_LineCnt);
@@ -51,7 +61,7 @@ public class Lec02_3 {
 				System.out.printf(" %s : %s\n", k07_field_name[32], k07_field[32]);//13번 : 경도주소
 			}
 			// 거리를 구하는 식 
-			if (k07_field.length > 31 ) {
+			if (k07_field.length > 31 && !(k07_field[31].trim().equals("")|| k07_field[32].trim().equals(""))) {
 				double k07_dist = Math.sqrt(Math.pow(Double.parseDouble(k07_field[31]) - k07_lat, 2)
 						+ Math.pow(Double.parseDouble(k07_field[32]) - k07_lng, 2));
 				// 거리 구하는 식을 이용해 현재 지점과의 거리를 구해서 화면에 출력해준다

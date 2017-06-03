@@ -23,7 +23,7 @@ public class Main3 {
 //		}
 		
 		int pageNum = 10;
-		int maxLoop = ArrayOneRec.size() % (double)pageNum != 0 ?  (ArrayOneRec.size() / pageNum)+1:ArrayOneRec.size() % pageNum ;
+		int maxLoop = ArrayOneRec.size() % (double)pageNum != 0 ?  (ArrayOneRec.size() / pageNum)+1:ArrayOneRec.size() / pageNum ;
 		int pageCount = 1;
 		int dataCount = 0;
 		int dataStart = 0;

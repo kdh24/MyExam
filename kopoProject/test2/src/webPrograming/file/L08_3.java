@@ -23,6 +23,8 @@ public class L08_3 {
 		// 최대, 최소값 저장을 위한 변수
 		int sMax=0;
 		int sMin=0;
+		String MaxDay="";
+		String MinDay="";
 		// 반복 횟수 처리를 위한 
 		int cnt = 0; int wcnt=0;
 		// 한줄의 내용을 readtxt 변수에 가져와 null값이 아니면 실행한다
@@ -42,11 +44,15 @@ public class L08_3 {
 					sMin = Integer.parseInt(field[3].replace("^", "").trim());
 				}else{ // 비교가 처음이 아닐때 실행
 					// 최대값 변수보다 필드에서 가져온 값이 더 크면 다시 대입해준다
-					if (sMax < Integer.parseInt(field[3].replace("^", "").trim()))
+					if (sMax < Integer.parseInt(field[3].replace("^", "").trim())){
 						sMax = Integer.parseInt(field[3].replace("^", "").trim());
+						MaxDay = field[1].trim().replace("^", "");
+					}
 					// 최소값 변수보다 필드에서 가져온 값이 더 작으면 다시 대입해준다
-					if (sMin > Integer.parseInt(field[3].replace("^", "").trim()))
+					if (sMin > Integer.parseInt(field[3].replace("^", "").trim())){
 						sMin = Integer.parseInt(field[3].replace("^", "").trim());
+						MinDay = field[1].trim().replace("^", "");
+					}
 				}
 				// 제일 처음 s 버퍼에 필드 첫번째 값을 ^와 공백을 제거해서 추가해준다
 				s.append(field[0].replace("^", "").trim());
@@ -66,8 +72,8 @@ public class L08_3 {
 			cnt++;
 		}
 		// 삼성 주가의 최대, 최소값 출력
-		System.out.println("삼성주가 15년 최대값 : " + sMax);
-		System.out.println("삼성주가 15년 최소값 : " + sMin);
+		System.out.println("삼성주가 15년 최대값 : " + sMax + " 날짜 : " + MaxDay);
+		System.out.println("삼성주가 15년 최소값 : " + sMin + " 날짜 : " + MinDay);
 		// 자원 반환
 		br.close();bw1.close();
 		// 종료하고 전체 반복 횟수, 비교대상에 포함되어 반복한 횟수를 출력해준다
