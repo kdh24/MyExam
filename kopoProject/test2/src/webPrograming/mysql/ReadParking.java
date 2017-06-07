@@ -22,15 +22,15 @@ public class ReadParking {
 		// QueryTxt 변수에 최장거리, 최단거리 구하는 sql문을 저장해준다
 		String QueryTxt;
 //		// 가장 먼 장소 구하기
-//		QueryTxt = String.format("select * from parking where " +
-//		"SQRT(POWER( plat-%f,2) + POWER( plng-%f,2) ) = " +
-//		"(select MAX(SQRT(POWER(plat-%f,2) + POWER(plng-%f,2))) from parking);",
-//		lat, lng, lat, lng);
-//		// 가장 가까운 장소 구하기
 		QueryTxt = String.format("select * from parking where " +
-				"SQRT(POWER( plat-%f,2) + POWER( plng-%f,2) ) = " +
-				"(select MIN(SQRT(POWER(plat-%f,2) + POWER(plng-%f,2))) from parking);",
-				lat, lng, lat, lng);
+		"SQRT(POWER( plat-%f,2) + POWER( plng-%f,2) ) = " +
+		"(select MAX(SQRT(POWER(plat-%f,2) + POWER(plng-%f,2))) from parking);",
+		lat, lng, lat, lng);
+//		// 가장 가까운 장소 구하기
+//		QueryTxt = String.format("select * from parking where " +
+//				"SQRT(POWER( plat-%f,2) + POWER( plng-%f,2) ) = " +
+//				"(select MIN(SQRT(POWER(plat-%f,2) + POWER(plng-%f,2))) from parking);",
+//				lat, lng, lat, lng);
 		// DB에 sql문을 보내어 결과값을 ResultSet 변수에 받아온다
 		ResultSet rset = stmt.executeQuery(QueryTxt);
 		// 가져온 데이터를 출력하기 전에 해당하는 위치의 제목을 출력

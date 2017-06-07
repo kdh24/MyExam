@@ -17,9 +17,9 @@ public class DeleteStock {
 		// SQL문을 처리하기 위해 Statement 객체를 생성
 		Statement stmt = conn.createStatement();
 		// ""안에 있는  sql문장을 DB로 보내어 score table 내용을 삭제해준다.
-//		stmt.execute("delete from stock;");
+		stmt.execute("delete from stock;");
 		// ""안에 있는  sql문장을 DB로 보내어 score table을 삭제해준다.
-		stmt.execute("drop table stock;");
+//		stmt.execute("drop table stock;");
 
 		// Statement 객체 종료	
 		stmt.close();
