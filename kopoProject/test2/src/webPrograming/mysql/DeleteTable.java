@@ -18,7 +18,7 @@ public class DeleteTable {
 		Statement stmt = conn.createStatement();
 		// ""안에 있는  sql문장을 DB로 보내어 table을 삭제해준다.
 		stmt.execute("delete from examtable;");
-		
+
 		// Statement 객체 종료
 		stmt.close();
 		// Connection 객체 종료

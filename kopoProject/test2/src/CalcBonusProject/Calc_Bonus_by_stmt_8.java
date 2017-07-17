@@ -75,7 +75,6 @@ public class Calc_Bonus_by_stmt_8 {
 					+ "INSERT INTO ERROR_LOG_TBL(ERROR_TIME, PROGRAM_NAME, ERROR_CODE, ERROR_MESSAGE, ETC)"
 					+ " VALUES(SYSDATE, '프로그램 에러',SQL_CODE, SQL_ERRM, '비고');"
 					+ "END;";
-			
 			// 작업 처리를 위한 Statement 객체  생성
 			cstmt = conn.prepareCall(sqlStr);
 

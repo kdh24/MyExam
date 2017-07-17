@@ -58,13 +58,6 @@ public class Calc_Bonus_by_stmt_1 {
 						break;
 				}
 				
-//				중간 확인을 위해 보너스 값 출력
-//				System.out.printf("월급 값 = %s\n", rs.getString(4));
-//				System.out.printf("보너스의 값 = %d\n", BONUS);
-				
-				// ResultSet 값 각각의 값을 보기위한 중간 출력 변수
-//				resultData += rs.getString(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3) + "\t" + rs.getString(4)
-//						+ "\t" + "\n";
 				
 				// BONUS_LARGE 테이블에 값을 저장하기 위한 Insert문  
 				sqlStr = String.format("INSERT INTO BONUS_LARGE(YYYYMM,EMPNO,JOB,DEPTNO,SAL,BONUS) "
@@ -72,10 +65,6 @@ public class Calc_Bonus_by_stmt_1 {
 						"to_char(sysdate,'yyyymm')", rs.getString(1), rs.getString(2), rs.getString(3),
 						rs.getString(4), String.valueOf(BONUS));   
 
-				// 몇 행 작업을 처리중인지 보여주는 count 변수와 작업내용을 보여주는 sqlStr 출력
-//				System.out.println(count + "row 처리 : " + sqlStr);
-				
-				
 				stmt_ins = conn.createStatement();
 				stmt_ins.executeUpdate(sqlStr);
 				stmt_ins.execute("COMMIT");

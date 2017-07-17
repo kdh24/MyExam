@@ -22,7 +22,7 @@ public class Main3 {
 //			ItemPrint(i);
 //		}
 		
-		int pageNum = 10;
+		int pageNum = 30;
 		int maxLoop = ArrayOneRec.size() % (double)pageNum != 0 ?  (ArrayOneRec.size() / pageNum)+1:ArrayOneRec.size() / pageNum ;
 		int pageCount = 1;
 		int dataCount = 0;
